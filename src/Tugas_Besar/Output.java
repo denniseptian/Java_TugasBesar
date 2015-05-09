@@ -1,5 +1,5 @@
 package Tugas_Besar;
 
-public class newxas {
+public class Output {
 
 }

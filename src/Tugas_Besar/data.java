@@ -11,50 +11,44 @@ public class data {
 	private int jumlah_pintu;
 	private int jumlah_cendela;
 	private int stop_kontak;
-	private String kondisi_stop_kontak;
+	private boolean kondisi_stop_kontak;
 	private String posisi_stop_kontak;
 	private int jumlah_kabel_LCD;
-	private String kondisi_kabel_LCD;
+	private boolean kondisi_kabel_LCD;
 	private String posisi_kabel_LCD;
 	private int jumlah_lampu;
-	private String kondisi_lampu;
+	private boolean kondisi_lampu;
 	private String posisi_lampu;
 	private int kipas_angin;
-	private String kondisi_kipas_angin;
+	private boolean kondisi_kipas_angin;
 	private String posisi_kipas_angin;
 	private int jumlah_AC;
-	private String kondisi_AC;
+	private boolean kondisi_AC;
 	private String posisi_AC;
 	private String SSID;
 	private int bandwith;
 	private int cctv;
-	private String kondisi_cctv;
+	private boolean kondisi_cctv;
 	private String posisi_cctv;
-	private String kondisi_lantai;
-	private String kondisi_dinding;
-	private String kondisi_atap;
-	private String kondisi_pintu;
-	private String kondisi_jendela;
-	private String kondisi_udara;
+	private boolean kondisi_lantai;
+	private boolean kondisi_dinding;
+	private boolean kondisi_atap;
+	private boolean kondisi_pintu;
+	private boolean kondisi_jendela;
+	private boolean kondisi_udara;
 	private int cahaya;
 	private int Kelembaban;
 	private int Suhu;
-	private String kebisingan;
-	private String bau;
-	private String kebocoran;
-	private String kerusakan;
-	private String keausan;
-	private String kekokohan;
-	private String kunci_pintu;
-	private String kunci_jendela;
-	private String bahaya;
+	private boolean kebisingan;
+	private boolean bau;
+	private boolean kebocoran;
+	private boolean kerusakan;
+	private boolean keausan;
+	private boolean kekokohan;
+	private boolean kunci_pintu;
+	private boolean kunci_jendela;
+	private boolean bahaya;
 	
-	public int getLuas_ruangan() {
-		return Luas_ruangan;
-	}
-	public void setLuas_ruangan(int luas_ruangan) {
-		Luas_ruangan = luas_ruangan;
-	}
 	public String getNama_ruang() {
 		return nama_ruang;
 	}
@@ -85,6 +79,12 @@ public class data {
 	public void setLebar_ruang(int lebar_ruang) {
 		this.lebar_ruang = lebar_ruang;
 	}
+	public int getLuas_ruangan() {
+		return Luas_ruangan;
+	}
+	public void setLuas_ruangan(int luas_ruangan) {
+		Luas_ruangan = luas_ruangan;
+	}
 	public int getJumlah_kursi() {
 		return jumlah_kursi;
 	}
@@ -109,10 +109,10 @@ public class data {
 	public void setStop_kontak(int stop_kontak) {
 		this.stop_kontak = stop_kontak;
 	}
-	public String getKondisi_stop_kontak() {
+	public boolean isKondisi_stop_kontak() {
 		return kondisi_stop_kontak;
 	}
-	public void setKondisi_stop_kontak(String kondisi_stop_kontak) {
+	public void setKondisi_stop_kontak(boolean kondisi_stop_kontak) {
 		this.kondisi_stop_kontak = kondisi_stop_kontak;
 	}
 	public String getPosisi_stop_kontak() {
@@ -127,10 +127,10 @@ public class data {
 	public void setJumlah_kabel_LCD(int jumlah_kabel_LCD) {
 		this.jumlah_kabel_LCD = jumlah_kabel_LCD;
 	}
-	public String getKondisi_kabel_LCD() {
+	public boolean isKondisi_kabel_LCD() {
 		return kondisi_kabel_LCD;
 	}
-	public void setKondisi_kabel_LCD(String kondisi_kabel_LCD) {
+	public void setKondisi_kabel_LCD(boolean kondisi_kabel_LCD) {
 		this.kondisi_kabel_LCD = kondisi_kabel_LCD;
 	}
 	public String getPosisi_kabel_LCD() {
@@ -145,10 +145,10 @@ public class data {
 	public void setJumlah_lampu(int jumlah_lampu) {
 		this.jumlah_lampu = jumlah_lampu;
 	}
-	public String getKondisi_lampu() {
+	public boolean isKondisi_lampu() {
 		return kondisi_lampu;
 	}
-	public void setKondisi_lampu(String kondisi_lampu) {
+	public void setKondisi_lampu(boolean kondisi_lampu) {
 		this.kondisi_lampu = kondisi_lampu;
 	}
 	public String getPosisi_lampu() {
@@ -163,10 +163,10 @@ public class data {
 	public void setKipas_angin(int kipas_angin) {
 		this.kipas_angin = kipas_angin;
 	}
-	public String getKondisi_kipas_angin() {
+	public boolean isKondisi_kipas_angin() {
 		return kondisi_kipas_angin;
 	}
-	public void setKondisi_kipas_angin(String kondisi_kipas_angin) {
+	public void setKondisi_kipas_angin(boolean kondisi_kipas_angin) {
 		this.kondisi_kipas_angin = kondisi_kipas_angin;
 	}
 	public String getPosisi_kipas_angin() {
@@ -181,10 +181,10 @@ public class data {
 	public void setJumlah_AC(int jumlah_AC) {
 		this.jumlah_AC = jumlah_AC;
 	}
-	public String getKondisi_AC() {
+	public boolean isKondisi_AC() {
 		return kondisi_AC;
 	}
-	public void setKondisi_AC(String kondisi_AC) {
+	public void setKondisi_AC(boolean kondisi_AC) {
 		this.kondisi_AC = kondisi_AC;
 	}
 	public String getPosisi_AC() {
@@ -211,10 +211,10 @@ public class data {
 	public void setCctv(int cctv) {
 		this.cctv = cctv;
 	}
-	public String getKondisi_cctv() {
+	public boolean isKondisi_cctv() {
 		return kondisi_cctv;
 	}
-	public void setKondisi_cctv(String kondisi_cctv) {
+	public void setKondisi_cctv(boolean kondisi_cctv) {
 		this.kondisi_cctv = kondisi_cctv;
 	}
 	public String getPosisi_cctv() {
@@ -223,40 +223,40 @@ public class data {
 	public void setPosisi_cctv(String posisi_cctv) {
 		this.posisi_cctv = posisi_cctv;
 	}
-	public String getKondisi_lantai() {
+	public boolean isKondisi_lantai() {
 		return kondisi_lantai;
 	}
-	public void setKondisi_lantai(String kondisi_lantai) {
+	public void setKondisi_lantai(boolean kondisi_lantai) {
 		this.kondisi_lantai = kondisi_lantai;
 	}
-	public String getKondisi_dinding() {
+	public boolean isKondisi_dinding() {
 		return kondisi_dinding;
 	}
-	public void setKondisi_dinding(String kondisi_dinding) {
+	public void setKondisi_dinding(boolean kondisi_dinding) {
 		this.kondisi_dinding = kondisi_dinding;
 	}
-	public String getKondisi_atap() {
+	public boolean isKondisi_atap() {
 		return kondisi_atap;
 	}
-	public void setKondisi_atap(String kondisi_atap) {
+	public void setKondisi_atap(boolean kondisi_atap) {
 		this.kondisi_atap = kondisi_atap;
 	}
-	public String getKondisi_pintu() {
+	public boolean isKondisi_pintu() {
 		return kondisi_pintu;
 	}
-	public void setKondisi_pintu(String kondisi_pintu) {
+	public void setKondisi_pintu(boolean kondisi_pintu) {
 		this.kondisi_pintu = kondisi_pintu;
 	}
-	public String getKondisi_jendela() {
+	public boolean isKondisi_jendela() {
 		return kondisi_jendela;
 	}
-	public void setKondisi_jendela(String kondisi_jendela) {
+	public void setKondisi_jendela(boolean kondisi_jendela) {
 		this.kondisi_jendela = kondisi_jendela;
 	}
-	public String getKondisi_udara() {
+	public boolean isKondisi_udara() {
 		return kondisi_udara;
 	}
-	public void setKondisi_udara(String kondisi_udara) {
+	public void setKondisi_udara(boolean kondisi_udara) {
 		this.kondisi_udara = kondisi_udara;
 	}
 	public int getCahaya() {
@@ -277,58 +277,60 @@ public class data {
 	public void setSuhu(int suhu) {
 		Suhu = suhu;
 	}
-	public String getKebisingan() {
+	public boolean isKebisingan() {
 		return kebisingan;
 	}
-	public void setKebisingan(String kebisingan) {
+	public void setKebisingan(boolean kebisingan) {
 		this.kebisingan = kebisingan;
 	}
-	public String getBau() {
+	public boolean isBau() {
 		return bau;
 	}
-	public void setBau(String bau) {
+	public void setBau(boolean bau) {
 		this.bau = bau;
 	}
-	public String getKebocoran() {
+	public boolean isKebocoran() {
 		return kebocoran;
 	}
-	public void setKebocoran(String kebocoran) {
+	public void setKebocoran(boolean kebocoran) {
 		this.kebocoran = kebocoran;
 	}
-	public String getKerusakan() {
+	public boolean isKerusakan() {
 		return kerusakan;
 	}
-	public void setKerusakan(String kerusakan) {
+	public void setKerusakan(boolean kerusakan) {
 		this.kerusakan = kerusakan;
 	}
-	public String getKeausan() {
+	public boolean isKeausan() {
 		return keausan;
 	}
-	public void setKeausan(String keausan) {
+	public void setKeausan(boolean keausan) {
 		this.keausan = keausan;
 	}
-	public String isKekokohan() {
+	public boolean isKekokohan() {
 		return kekokohan;
 	}
-	public void setKekokohan(String kekokohan) {
+	public void setKekokohan(boolean kekokohan) {
 		this.kekokohan = kekokohan;
 	}
-	public String isKunci_pintu() {
+	public boolean isKunci_pintu() {
 		return kunci_pintu;
 	}
-	public void setKunci_pintu(String kunci_pintu) {
+	public void setKunci_pintu(boolean kunci_pintu) {
 		this.kunci_pintu = kunci_pintu;
 	}
-	public String isKunci_jendela() {
+	public boolean isKunci_jendela() {
 		return kunci_jendela;
 	}
-	public void setKunci_jendela(String kunci_jendela) {
+	public void setKunci_jendela(boolean kunci_jendela) {
 		this.kunci_jendela = kunci_jendela;
 	}
-	public String isBahaya() {
+	public boolean isBahaya() {
 		return bahaya;
 	}
-	public void setBahaya(String bahaya) {
+	public void setBahaya(boolean bahaya) {
 		this.bahaya = bahaya;
 	}
+
+
 }
