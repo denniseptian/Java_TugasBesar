@@ -31,7 +31,7 @@ public class Analisis {
 	boolean kondisi_atap;
 	boolean kondisi_pintu;
 	boolean kondisi_jendela;
-	int Cahaya;
+	boolean Cahaya;
 	int kelembaban;
 	boolean kondisi_suhu;
 	boolean kondisi_kebisingan;
@@ -198,7 +198,7 @@ public class Analisis {
 		 }
 	return kondisi_lantai;
 	}
-	public int Cahaya (){
+	public boolean Cahaya (){
 		if(dataObject.getCahaya()>=250){
 			Cahaya = true ;
 		}else{
@@ -231,7 +231,7 @@ public class Analisis {
 	return kondisi_kelembaban;
 	}
 	public boolean kondisi_bau (){
-		if(dataObject.isBau().equalsIgnoreCase("tidak")){
+		if(dataObject.getBau().equalsIgnoreCase("tidak")){
 			kondisi_bau = true ;
 		}else{
 			kondisi_bau = false ;
@@ -239,7 +239,7 @@ public class Analisis {
 	return kondisi_bau;
 	}
 	public boolean kondisi_kebocoran(){
-		if(dataObject.isKebocoran().equalsIgnoreCase("ya")){
+		if(dataObject.getKebocoran().equalsIgnoreCase("ya")){
 			kondisi_kebocoran = true ;
 		}else{
 			kondisi_kebocoran = false ;
