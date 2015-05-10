@@ -168,17 +168,17 @@ public class Analisis {
 	}
 	public int Bandwith (){
 		if(dataObject.getBandwith()>=512){
-			Bandwith = true ;
+			Bandwith = 1024 ;
 		}else{
-			Bandwith = false ;
+			Bandwith = 512 ;
 		}
 	return Bandwith ;	
 	}
 	public int Jumlah_cctv (){
 		if(dataObject.getCctv()>=2){
-			Jumlah_cctv = true ;
+			Jumlah_cctv = 1 ;
 		}else{
-			Jumlah_cctv = false ;
+			Jumlah_cctv = 1 ;
 		}
 	return Jumlah_cctv;
 	}
