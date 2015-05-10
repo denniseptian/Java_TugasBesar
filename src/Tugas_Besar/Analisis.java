@@ -208,9 +208,9 @@ public class Analisis {
 	}
 	public int Kelembaban(){
 		if(dataObject.getKelembaban() >= 70 && dataObject.getKelembaban() <= 80) {
-			kelembaban = true ;
+			kelembaban = 56 ;
 		}else{
-			kelembaban = false ;
+			kelembaban = 23 ;
 		}
 	return kelembaban;
 	}
