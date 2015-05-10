@@ -247,7 +247,7 @@ public class Analisis {
 	return kondisi_kebocoran;
 	}
 	public boolean kondisi_keausan(){
-		if (dataObject.getKeausan().equalsIgnoreCase("aus")) {
+		if (dataObject.isKeausan()== true) {
 			kondisi_keausan = true ;
 		}else{
 			kondisi_keausan = false ;
