@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 public class Input {
 	data dataObject = new data();
 	public void Master_input(){
+
 		dataObject.setNama_ruang(JOptionPane.showInputDialog("Masukkan Nama Ruang"));
 		dataObject.setLokasi_ruang(JOptionPane.showInputDialog("Masukkan lokasi ruangan"));
 		dataObject.setFakultas(JOptionPane.showInputDialog("Masukkan Nama fakultas"));
