@@ -152,9 +152,9 @@ public class Analisis {
 	}
 	public String Posisi_AC(){
 		if(dataObject.getPosisi_AC().equalsIgnoreCase("baik")&&dataObject.getPosisi_AC().equalsIgnoreCase("belakang")){
-			Posisi_AC = true ;
+			Posisi_AC = "belakang" ;
 		}else{
-			Posisi_AC = false ;
+			Posisi_AC = "depan" ;
 		}
 	return Posisi_AC ;
 	}
