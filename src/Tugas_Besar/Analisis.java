@@ -228,7 +228,7 @@ public class Analisis {
 		}else{
 			kondisi_kebisingan = false ;
 		}
-	return kondisi_kelembaban;
+	return kondisi;
 	}
 	public boolean kondisi_bau (){
 		if(dataObject.getBau().equalsIgnoreCase("tidak")){
