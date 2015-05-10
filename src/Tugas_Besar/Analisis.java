@@ -191,7 +191,7 @@ public class Analisis {
 	return posisi_cctv;
 	}
 	public boolean kondisi_lantai(){
-		 if (dataObject.getkondisi_lantai().equalsIgnoreCase("bersih") && dataObject.getkondisi_dinding().equalsIgnoreCase("bersih") && dataObject.getkondisi_atap().equalsIgnoreCase("bersih") && dataObject.getkondisi_pintu().equalsIgnoreCase("bersih") && dataObject.getkondisi_jendela().equalsIgnoreCase("bersih")){
+		 if (dataObject.isKondisi_lantai() == true ){
 			kondisi_lantai = true; 
 		 }else{
 			 kondisi_lantai = false ;
@@ -223,15 +223,15 @@ public class Analisis {
 	return kondisi_suhu;
 	}
 	public boolean kondisi_kebisingan(){
-		if (dataObject.getKebisingan().equalsIgnoreCase("tidak")) {
+		if (dataObject.isKebisingan() == true) {
 			kondisi_kebisingan = true ;
 		}else{
 			kondisi_kebisingan = false ;
 		}
-	return kondisi;
+	return kondisi_kebisingan;
 	}
 	public boolean kondisi_bau (){
-		if(dataObject.getBau().equalsIgnoreCase("tidak")){
+		if(dataObject.isBau() == true ){
 			kondisi_bau = true ;
 		}else{
 			kondisi_bau = false ;
@@ -239,7 +239,7 @@ public class Analisis {
 	return kondisi_bau;
 	}
 	public boolean kondisi_kebocoran(){
-		if(dataObject.getKebocoran().equalsIgnoreCase("ya")){
+		if(dataObject.isKebocoran() == true ){
 			kondisi_kebocoran = true ;
 		}else{
 			kondisi_kebocoran = false ;
