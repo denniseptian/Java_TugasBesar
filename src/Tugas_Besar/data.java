@@ -331,6 +331,11 @@ public class data {
 	public void setBahaya(boolean bahaya) {
 		this.bahaya = bahaya;
 	}
+	public String getKondisi_lantai() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 
 
 }
