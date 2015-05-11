@@ -8,14 +8,6 @@ public class Input {
 	data dataObject = new data();
 	public void Input_Ruang(){
 		Scanner scan = new Scanner(System.in);
-		/*//nama ruang
-		System.out.println("Masukkan nama ruang");
-		dataObject.setNama_ruang(scan.nextLine());
-		System.out.println("Masukkan lokasi ruang");
-		dataObject.setLokasi_ruang(scan.nextLine());
-		System.out.println("Masukkan Nama fakultas");
-		dataObject.setFakultas(scan.nextLine());
-		scan.close()*/
 		dataObject.setNama_ruang(JOptionPane.showInputDialog("Masukkan Nama Ruang"));
 		dataObject.setLokasi_ruang(JOptionPane.showInputDialog("Masukkan lokasi ruangan"));
 		dataObject.setFakultas(JOptionPane.showInputDialog("Masukkan Nama fakultas"));

@@ -18,10 +18,18 @@ public class Main {
 		System.out.println("- : ");
 		pilihan = scan.nextInt();
 		scan.close();
-		if (pilihan == 1) {
+		switch (pilihan) {
+		case 1:
 			InputRuangKelas();
-		}else if(pilihan == 2){
+			break;
+		case 2:
 			InputRuangKantor();
+			break;
+
+		default:
+			System.out.println("Masukkan Perintah dengan benar!");
+			Main.main(args);
+			break;
 		}
 	}
 
