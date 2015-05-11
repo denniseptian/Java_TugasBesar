@@ -11,13 +11,13 @@ public class data {
 	private int jumlah_pintu;
 	private int jumlah_cendela;
 	private int stop_kontak;
-	private boolean kondisi_stop_kontak;
+	private String kondisi_stop_kontak;
 	private String posisi_stop_kontak;
 	private int jumlah_kabel_LCD;
-	private boolean kondisi_kabel_LCD;
+	private String kondisi_kabel_LCD;
 	private String posisi_kabel_LCD;
 	private int jumlah_lampu;
-	private boolean kondisi_lampu;
+	private String kondisi_lampu;
 	private String posisi_lampu;
 	private int kipas_angin;
 	private boolean kondisi_kipas_angin;
@@ -109,10 +109,10 @@ public class data {
 	public void setStop_kontak(int stop_kontak) {
 		this.stop_kontak = stop_kontak;
 	}
-	public boolean isKondisi_stop_kontak() {
+	public String isKondisi_stop_kontak() {
 		return kondisi_stop_kontak;
 	}
-	public void setKondisi_stop_kontak(boolean kondisi_stop_kontak) {
+	public void setKondisi_stop_kontak(String kondisi_stop_kontak) {
 		this.kondisi_stop_kontak = kondisi_stop_kontak;
 	}
 	public String getPosisi_stop_kontak() {
@@ -127,10 +127,10 @@ public class data {
 	public void setJumlah_kabel_LCD(int jumlah_kabel_LCD) {
 		this.jumlah_kabel_LCD = jumlah_kabel_LCD;
 	}
-	public boolean isKondisi_kabel_LCD() {
+	public String isKondisi_kabel_LCD() {
 		return kondisi_kabel_LCD;
 	}
-	public void setKondisi_kabel_LCD(boolean kondisi_kabel_LCD) {
+	public void setKondisi_kabel_LCD(String kondisi_kabel_LCD) {
 		this.kondisi_kabel_LCD = kondisi_kabel_LCD;
 	}
 	public String getPosisi_kabel_LCD() {
@@ -145,10 +145,10 @@ public class data {
 	public void setJumlah_lampu(int jumlah_lampu) {
 		this.jumlah_lampu = jumlah_lampu;
 	}
-	public boolean isKondisi_lampu() {
+	public String setKondisi_lampu() {
 		return kondisi_lampu;
 	}
-	public void setKondisi_lampu(boolean kondisi_lampu) {
+	public void setKondisi_lampu(String kondisi_lampu) {
 		this.kondisi_lampu = kondisi_lampu;
 	}
 	public String getPosisi_lampu() {
@@ -331,11 +331,4 @@ public class data {
 	public void setBahaya(boolean bahaya) {
 		this.bahaya = bahaya;
 	}
-	public String getKondisi_lantai() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-
-
 }

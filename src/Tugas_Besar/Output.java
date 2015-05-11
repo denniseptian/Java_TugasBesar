@@ -1,5 +1,5 @@
 package Tugas_Besar;
-public class Output {
+public class Output extends data{
 	data dataObject = new data();
 	Analisis AnalisisObject = new Analisis();
 	public void DeklarasiRuangan(){

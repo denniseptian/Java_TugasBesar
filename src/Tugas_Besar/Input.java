@@ -1,51 +1,52 @@
 package Tugas_Besar;
 
+import java.util.Scanner;
+
 import javax.swing.JOptionPane;
 
 public class Input {
 	data dataObject = new data();
-	public void Master_input(){
-
+	public void Input_Ruang(){
+		Scanner scan = new Scanner(System.in);
+		/*//nama ruang
+		System.out.println("Masukkan nama ruang");
+		dataObject.setNama_ruang(scan.nextLine());
+		System.out.println("Masukkan lokasi ruang");
+		dataObject.setLokasi_ruang(scan.nextLine());
+		System.out.println("Masukkan Nama fakultas");
+		dataObject.setFakultas(scan.nextLine());
+		scan.close()*/
 		dataObject.setNama_ruang(JOptionPane.showInputDialog("Masukkan Nama Ruang"));
 		dataObject.setLokasi_ruang(JOptionPane.showInputDialog("Masukkan lokasi ruangan"));
 		dataObject.setFakultas(JOptionPane.showInputDialog("Masukkan Nama fakultas"));
+		//panjang dan lebar
 		String Panjang_ruangan = JOptionPane.showInputDialog("Masukkan panjang ruangan");
 		dataObject.setPanjang_ruang(Integer.parseInt(Panjang_ruangan));
 		String Lebar_ruangan = JOptionPane.showInputDialog("Masukkan Lebar Ruangan");
 		dataObject.setLebar_ruang(Integer.parseInt(Lebar_ruangan));
+		//pintu dan jendela
 		String jumlah_pintu = JOptionPane.showInputDialog("masukkan jumlah pintu");
 		dataObject.setJumlah_pintu(Integer.parseInt(jumlah_pintu));
 		String jumlah_cendela = JOptionPane.showInputDialog("Masukkan Jumlah cendela");
 		dataObject.setJumlah_cendela(Integer.parseInt(jumlah_cendela));
 		String jumlah_kursi = JOptionPane.showInputDialog("Masukkan jumlah kursi");
 		dataObject.setJumlah_kursi(Integer.parseInt(jumlah_kursi));
+		//stop kontak
 		String jumlah_stop_kontak = (JOptionPane.showInputDialog("Masukkan jumlah stop kontak"));
 		dataObject.setStop_kontak(Integer.parseInt(jumlah_stop_kontak));
-		String KondisiStopKontak = (JOptionPane.showInputDialog("kondisi_stop_kontak baik/rusak"));
-		if(KondisiStopKontak.equalsIgnoreCase("baik")){
-			dataObject.setKondisi_stop_kontak(true);
-		}if(KondisiStopKontak.equalsIgnoreCase("rusak")){
-			dataObject.setKondisi_stop_kontak(false);
-		}
+		dataObject.setKondisi_stop_kontak(JOptionPane.showInputDialog("kondisi_stop_kontak baik/rusak"));
 		dataObject.setPosisi_stop_kontak(JOptionPane.showInputDialog("Masukkan Posisi"));
+		//lcd
 		String jumlah_Kabel_lcd = (JOptionPane.showInputDialog("Masukkan jumlah Kabel LCD"));
 		dataObject.setJumlah_kabel_LCD(Integer.parseInt(jumlah_Kabel_lcd));
-		String KondisiKabelLCD = (JOptionPane.showInputDialog("kondisi_stop_kontak"));
-		if(KondisiKabelLCD.equalsIgnoreCase("baik")){
-			dataObject.setKondisi_kabel_LCD(true);
-		}if(KondisiStopKontak.equalsIgnoreCase("rusak")){
-			dataObject.setKondisi_kabel_LCD(false);
-		}
+		dataObject.setKondisi_stop_kontak(JOptionPane.showInputDialog("kondisi_stop_kontak"));
 		dataObject.setPosisi_kabel_LCD(JOptionPane.showInputDialog("Masukkan Posisi kabel LCD"));
+		//lampu
 		String Jumlah_lampu = JOptionPane.showInputDialog("Masukkan jumlah lampu");
 		dataObject.setJumlah_lampu(Integer.parseInt(Jumlah_lampu));
-		String KondisiLampu = (JOptionPane.showInputDialog("Masukkan kondisi lampu"));
-		if(KondisiLampu.equalsIgnoreCase("baik")){
-			dataObject.setKondisi_lampu(true);
-		}if(KondisiLampu.equalsIgnoreCase("rusak")){
-			dataObject.setKondisi_lampu(false);
-		}
+		dataObject.setKondisi_lampu(JOptionPane.showInputDialog("Masukkan kondisi lampu"));
 		dataObject.setPosisi_lampu(JOptionPane.showInputDialog("Masukkan posisi lampu"));
+		//kipas angin
 		String jumlah_kipas_angin = JOptionPane.showInputDialog("Masukkan jumlah kipas angin");
 		dataObject.setKipas_angin(Integer.parseInt(jumlah_kipas_angin));
 		String KondisiKipasAngin = (JOptionPane.showInputDialog("Masukkan kondisi kipas angin"));
@@ -55,6 +56,7 @@ public class Input {
 			dataObject.setKondisi_kipas_angin(false);
 		}
 		dataObject.setPosisi_kipas_angin(JOptionPane.showInputDialog("Masukkan posisi kipas angin"));
+		//ac
 		String jumlah_ac = JOptionPane.showInputDialog("Masukkan jumlah AC");
 		dataObject.setJumlah_AC(Integer.parseInt(jumlah_ac));
 		String KondisiAC = (JOptionPane.showInputDialog("Masukkan kondisi AC"));
@@ -64,6 +66,7 @@ public class Input {
 			dataObject.setKondisi_AC(false);
 		}
 		dataObject.setPosisi_AC(JOptionPane.showInputDialog("Masukkan posisi AC"));
+		//SSID
 		dataObject.setSSID(JOptionPane.showInputDialog("Masukkan SSID"));
 		String bandwith = JOptionPane.showInputDialog("Masukkan Bandwith");
 		dataObject.setBandwith(Integer.parseInt(bandwith));
@@ -142,5 +145,7 @@ public class Input {
 		}if(Keausan.equalsIgnoreCase("ya")){
 			dataObject.setKeausan(false);
 		}
+		
+		scan.close();
 	}
 }

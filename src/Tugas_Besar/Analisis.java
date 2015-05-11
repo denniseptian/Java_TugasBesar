@@ -1,6 +1,6 @@
 package Tugas_Besar;
 
-public class Analisis {
+public class Analisis{
 	Input InputObject = new Input();
 	data dataObject = new data();
 	int LuasRuangan;
