@@ -23,8 +23,8 @@ public class Analisis{
 	boolean Jumlah_AC;
 	String Posisi_AC ;
 	boolean SSID;
-	int Bandwith;
-	int Jumlah_cctv;
+	boolean Bandwith;
+	boolean Jumlah_cctv;
 	boolean posisi_cctv;
 	boolean kondisi_lantai;
 	boolean kondisi_dinding;
@@ -166,19 +166,19 @@ public class Analisis{
 		}
 	return SSID ;
 	}
-	public int Bandwith (){
+	public boolean Bandwith (){
 		if(dataObject.getBandwith()>=512){
-			Bandwith = 1024 ;
+			Bandwith = true ;
 		}else{
-			Bandwith = 512 ;
+			Bandwith = false ;
 		}
 	return Bandwith ;	
 	}
-	public int Jumlah_cctv (){
+	public boolean Jumlah_cctv (){
 		if(dataObject.getCctv()>=2){
-			Jumlah_cctv = 1 ;
+			Jumlah_cctv = true ;
 		}else{
-			Jumlah_cctv = 1 ;
+			Jumlah_cctv = false ;
 		}
 	return Jumlah_cctv;
 	}
