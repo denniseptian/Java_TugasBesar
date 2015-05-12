@@ -36,9 +36,13 @@ public class Main {
 	public static void InputRuangKelas() {
 
 		InputObject.Input_Ruang();
+		//lek ngerti terusno gpp soale aku marunu budal
+		//gampang kok gak usa di run soale hasill e bakal null
 
 	}
 	public static void InputRuangKantor() {
 		InputKantorObject.Input_Ruang();
+		//lek ngerti terusno gpp soale aku marunu budal
+		//gampang kok gak usa di run soale hasill e bakal null
 	}
 }
