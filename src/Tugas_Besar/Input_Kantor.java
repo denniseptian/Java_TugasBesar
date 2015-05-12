@@ -3,6 +3,7 @@ package Tugas_Besar;
 import javax.swing.JOptionPane;
 
 public class Input_Kantor extends Input {
+	
 	@Override
 	public void Input_Ruang() {
 
