@@ -1,7 +1,6 @@
 package Tugas_Besar;
 
-public class AnalisisKantor extends Analisis{
-	
+public class AnalisisRuangkelas extends Analisis{
 	@Override
 	public int LuasRuangan(){
 	

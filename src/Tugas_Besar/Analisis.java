@@ -41,40 +41,22 @@ public class Analisis{
 	
 	public int LuasRuangan(){
 	
-		LuasRuangan = dataObject.getPanjang_ruang()*dataObject.getLuas_ruangan();
 		return LuasRuangan;
 	}
 	public String BentukRuangan(){
-		if(dataObject.getLuas_ruangan()!=dataObject.getLuas_ruangan()){
-			BentukRuangan = "Persegi Panjang";
-		}else{
-			BentukRuangan = "Kubus";
-		}
+		
 		return BentukRuangan;
 	}
 	public boolean RasioLuas(){
-		RasioLuas = LuasRuangan/dataObject.getJumlah_kursi();
-		if(RasioLuas>=0.5){
-			RasioLuasBoolean=true;
-		}else if(RasioLuas<0.5){
-			RasioLuasBoolean=false;
-		}
+		
 		return RasioLuasBoolean;
 	}
 	public boolean Pintu(){
-		if(dataObject.getJumlah_pintu()>=2){
-			PintuBoolean = true;
-		}else if(dataObject.getJumlah_pintu()<2){
-			PintuBoolean = false;
-		}
+		
 		return PintuBoolean;
 	}
 	public boolean Jendela(){
-		if(dataObject.getJumlah_cendela()>=1){
-			JendelaBoolean = true;
-		}else if(dataObject.getJumlah_cendela()<1){
-			JendelaBoolean = false;
-		}
+
 	return JendelaBoolean;
 	}
 	public boolean Kelistrikan_StopKontak(){
