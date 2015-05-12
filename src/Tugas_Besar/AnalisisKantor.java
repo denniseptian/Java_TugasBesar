@@ -7,37 +7,6 @@ public class AnalisisKantor extends Analisis{
 	String BentukRuangan;
 	int RasioLuas;
 	String Pintu;
-	boolean RasioLuasBoolean;
-	boolean PintuBoolean;
-	boolean JendelaBoolean;
-	boolean Kelistrikan;
-	boolean StopKontak;
-	boolean KondisiStopKontak;
-	boolean PosisiStopKontak;
-	boolean JumlahKabel_LCD ;
-	boolean PosisiKabel_LCD;
-	boolean Jumlah_Lampu;
-	boolean Posisi_Lampu;
-	boolean Jumlah_KipasAngin ;
-	boolean Posisi_KipasAngin; 
-	boolean Jumlah_AC;
-	String Posisi_AC ;
-	boolean SSID;
-	int Bandwith;
-	int Jumlah_cctv;
-	boolean posisi_cctv;
-	boolean kondisi_lantai;
-	boolean kondisi_dinding;
-	boolean kondisi_atap;
-	boolean kondisi_pintu;
-	boolean kondisi_jendela;
-	boolean Cahaya;
-	int kelembaban;
-	boolean kondisi_suhu;
-	boolean kondisi_kebisingan;
-	boolean kondisi_bau;
-	boolean kondisi_kebocoran;
-	boolean kondisi_keausan;
 	
 	@Override
 	public int LuasRuangan(){
@@ -57,18 +26,18 @@ public class AnalisisKantor extends Analisis{
 	@Override
 	public boolean RasioLuas(){
 		RasioLuas = LuasRuangan/dataObject.getJumlah_kursi();
-		if(RasioLuas>=0.5){
+		if(RasioLuas>=5){
 			RasioLuasBoolean=true;
-		}else if(RasioLuas<0.5){
+		}else if(RasioLuas<5){
 			RasioLuasBoolean=false;
 		}
 		return RasioLuasBoolean;
 	}
 	@Override
 	public boolean Pintu(){
-		if(dataObject.getJumlah_pintu()>=2){
+		if(dataObject.getJumlah_pintu()>=1){
 			PintuBoolean = true;
-		}else if(dataObject.getJumlah_pintu()<2){
+		}else if(dataObject.getJumlah_pintu()<1){
 			PintuBoolean = false;
 		}
 		return PintuBoolean;
@@ -84,10 +53,10 @@ public class AnalisisKantor extends Analisis{
 	}
 	@Override
 	public boolean Kelistrikan_StopKontak(){
-		if(dataObject.getStop_kontak()>=4){
+		if(dataObject.getStop_kontak()>=6){
 			StopKontak = true;
 		}
-		else if(dataObject.getStop_kontak()<4){
+		else if(dataObject.getStop_kontak()<6){
 			StopKontak = false;
 		}
 	return StopKontak;
@@ -103,25 +72,17 @@ public class AnalisisKantor extends Analisis{
 	}
 	@Override
 	public boolean JumlahKabel_LCD (){
-		if(dataObject.getJumlah_kabel_LCD()>=1){
-			JumlahKabel_LCD = true ;
-		}else{
-			JumlahKabel_LCD = false;
-		}
+		
 	return JumlahKabel_LCD;
 	}
 	@Override
 	public boolean PosisiKabel_LCD(){
-		if(dataObject.getPosisi_kabel_LCD().equalsIgnoreCase("baik")&&dataObject.getPosisi_kabel_LCD().equalsIgnoreCase("pojok")){
-			PosisiKabel_LCD = true ;
-		}else{
-			PosisiKabel_LCD = false ;
-		}
+		
 	return PosisiKabel_LCD;
 	}
 	@Override
 	public boolean Jumlah_Lampu(){
-		if(dataObject.getJumlah_lampu()>=18){
+		if(dataObject.getJumlah_lampu()>=5){
 			Jumlah_Lampu = true ;
 		}else{
 			Jumlah_Lampu = false ;
@@ -183,31 +144,22 @@ public class AnalisisKantor extends Analisis{
 	return SSID ;
 	}
 	@Override
-	public int Bandwith (){
-		if(dataObject.getBandwith()>=512){
-			Bandwith = 1024 ;
+	public boolean Bandwith (){
+		if(dataObject.getBandwith()>=2048){
+			Bandwith = true ;
 		}else{
-			Bandwith = 512 ;
+			Bandwith = false ;
 		}
 	return Bandwith ;	
 	}
 	@Override
-	public int Jumlah_cctv (){
+	public boolean Jumlah_cctv (){
 		if(dataObject.getCctv()>=2){
-			Jumlah_cctv = 1 ;
+			Jumlah_cctv = true ;
 		}else{
-			Jumlah_cctv = 1 ;
+			Jumlah_cctv = false ;
 		}
 	return Jumlah_cctv;
-	}
-	@Override
-	public boolean posisi_cctv(){
-		if(dataObject.getPosisi_kipas_angin().equalsIgnoreCase("baik")&&dataObject.getPosisi_kipas_angin().equalsIgnoreCase("atap")){
-			posisi_cctv = true ;
-		}else{
-			posisi_cctv = false ;
-		}
-	return posisi_cctv;
 	}
 	@Override
 	public boolean kondisi_lantai(){
