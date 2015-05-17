@@ -1,240 +1,222 @@
 package Tugas_Besar;
 
-public class Analisis{
+public class Analisis {
 	Input InputObject = new Input();
-	data dataObject = new data();
-	int LuasRuangan;
-	String BentukRuangan;
-	int RasioLuas;
-	String Pintu;
-	boolean RasioLuasBoolean;
-	boolean PintuBoolean;
-	boolean JendelaBoolean;
-	boolean Kelistrikan;
-	boolean StopKontak;
-	boolean KondisiStopKontak;
-	boolean PosisiStopKontak;
-	boolean JumlahKabel_LCD ;
-	boolean PosisiKabel_LCD;
-	boolean Jumlah_Lampu;
-	boolean Posisi_Lampu;
-	boolean Jumlah_KipasAngin ;
-	boolean Posisi_KipasAngin; 
-	boolean Jumlah_AC;
-	String Posisi_AC ;
-	boolean SSID;
-	boolean Bandwith;
-	boolean Jumlah_cctv;
-	boolean posisi_cctv;
-	boolean kondisi_lantai;
-	boolean kondisi_dinding;
-	boolean kondisi_atap;
-	boolean kondisi_pintu;
-	boolean kondisi_jendela;
-	boolean Cahaya;
-	int kelembaban;
-	boolean kondisi_suhu;
-	boolean kondisi_kebisingan;
-	boolean kondisi_bau;
-	boolean kondisi_kebocoran;
-	boolean kondisi_keausan;
-	
-	public int LuasRuangan(){
-	
-		return LuasRuangan;
-	}
-	public String BentukRuangan(){
-		
-		return BentukRuangan;
-	}
-	public boolean RasioLuas(){
-		
-		return RasioLuasBoolean;
-	}
-	public boolean Pintu(){
-		
-		return PintuBoolean;
-	}
-	public boolean Jendela(){
+	Output OutputObject = new Output();
+	RuangKelas ruangKelasObject = new RuangKelas();
 
-	return JendelaBoolean;
+	int Kesesuaian = 0;
+	private double Luas;
+	private double Rasio;
+
+	public double getLuas() {
+		return Luas;
 	}
-	public boolean Kelistrikan_StopKontak(){
-		if(dataObject.getStop_kontak()>=4){
-			StopKontak = true;
+
+	public void setLuas(double luas) {
+		Luas = luas;
+	}
+
+	public double getRasio() {
+		return Rasio;
+	}
+
+	public void setRasio(double rasio) {
+		Rasio = rasio;
+	}
+
+	double Luas() {
+		Luas = ruangKelasObject.getPanjangRuang()
+				* ruangKelasObject.getLebarRuang();
+		return Luas;
+	}
+
+	void KondsiRuangan() {
+		
+		if (ruangKelasObject.getPanjangRuang() != ruangKelasObject
+				.getLebarRuang()) {
+			System.out.println("Bentuk Ruangan Persegi panjang");
+			System.out.println("Ruangan Sesuai");
+		} else {
+			System.out.println("Bentuk Ruangan Tidak Persegi panjang");
+			System.out.println("Ruangan Sesuai");
 		}
-		else if(dataObject.getStop_kontak()<4){
-			StopKontak = false;
+		Rasio = Luas / ruangKelasObject.getJumlahKursi();
+		if (Rasio >= 0.5) {
+			System.out.println("Rasio Ruangan Sesuai");
+			Kesesuaian++;
+		} else {
+			System.out.println("Rasio Ruangan Tidak Sesuai");
 		}
-	return StopKontak;
-	}
-	public boolean PosisiStopKontak(){
-		if(dataObject.getPosisi_stop_kontak().equalsIgnoreCase("pojok")&&dataObject.getPosisi_stop_kontak().equalsIgnoreCase("dekat dozen")){
-			PosisiStopKontak = true;
-		}else{
-			PosisiStopKontak = false;
+		if (ruangKelasObject.getJumlahJendela() >= 1) {
+			System.out.println("Jumlah Cendela Sesuai");
+			Kesesuaian++;
+		} else {
+			System.out.println("Jumlah Jendela tidak sesuai");
 		}
-	return PosisiStopKontak;
-	}
-	public boolean JumlahKabel_LCD (){
-		if(dataObject.getJumlah_kabel_LCD()>=1){
-			JumlahKabel_LCD = true ;
-		}else{
-			JumlahKabel_LCD = false;
+		if (ruangKelasObject.getJumlahPintu() >= 2) {
+			System.out.println("Jumlah Pintu sesuai");
+			Kesesuaian++;
+		} else {
+			System.out.println("Jumlah Pintu tidak sesuai");
 		}
-	return JumlahKabel_LCD;
+		OutputObject.get(ruangKelasObject.getPanjangRuang(),
+				ruangKelasObject.getLebarRuang(),
+				ruangKelasObject.getJumlahKursi(),
+				ruangKelasObject.getJumlahPintu(),
+				ruangKelasObject.getJumlahJendela());
+
 	}
-	public boolean PosisiKabel_LCD(){
-		if(dataObject.getPosisi_kabel_LCD().equalsIgnoreCase("baik")&&dataObject.getPosisi_kabel_LCD().equalsIgnoreCase("pojok")){
-			PosisiKabel_LCD = true ;
-		}else{
-			PosisiKabel_LCD = false ;
+
+	double KondisiKelas() {
+		ruangKelasObject = InputObject.getRuangKelas();
+		if (ruangKelasObject.getJumlahStopKontak() >= 4) {
+			System.out.println("Jumlah Stop Kontak Sesuai");
+			Kesesuaian++;
+		} else {
+			System.out.println("Tidak Sesusai");
 		}
-	return PosisiKabel_LCD;
-	}
-	public boolean Jumlah_Lampu(){
-		if(dataObject.getJumlah_lampu()>=18){
-			Jumlah_Lampu = true ;
-		}else{
-			Jumlah_Lampu = false ;
+		if (ruangKelasObject.getKondisiStopKontak().equalsIgnoreCase("baik")) {
+			System.out.println("Kondisi Stop Kontak Sesuai");
+			Kesesuaian++;
+		} else {
+			System.out.println("Tidak Sesuai");
 		}
-	return Jumlah_Lampu;	
-	}
-	public boolean Posisi_Lampu(){
-		if(dataObject.getPosisi_lampu().equalsIgnoreCase("baik")&&dataObject.getPosisi_lampu().equalsIgnoreCase("atas")){
-			Posisi_Lampu = true;
-		}else{
-			Posisi_Lampu = false ;
+		if (ruangKelasObject.getPosisiStopKontak().equalsIgnoreCase(
+				"DekatDosen")
+				|| ruangKelasObject.getPosisiStopKontak().equalsIgnoreCase(
+						"PojokKelas")) {
+			System.out.println("Posisi Sesuai");
+			Kesesuaian++;
+		} else {
+			System.out.println("Posisi Tidak Sesuai");
 		}
-	return Posisi_Lampu;	
-	}
-	public boolean Jumlah_KipasAngin(){
-		if(dataObject.getKipas_angin()>=2){
-			Jumlah_KipasAngin = true ;
-		}else{
-			Jumlah_KipasAngin = false ;
+		if (ruangKelasObject.getJumlahKabelLCD() >= 1) {
+			System.out.println("Jumlah Kabel LCD Sesuai");
+			Kesesuaian++;
+
+		} else {
+			System.out.println("Jumlah Kabel LCD Tidak Sesuai");
 		}
-	return Jumlah_KipasAngin ;	
-	}
-	public boolean Posisi_KipasAngin(){
-		if(dataObject.getPosisi_kipas_angin().equalsIgnoreCase("baik")&&dataObject.getPosisi_kipas_angin().equalsIgnoreCase("atap")){
-			Posisi_KipasAngin = true ;
-		}else{
-			Posisi_KipasAngin = false ;
+		if (ruangKelasObject.getKondisiKabelLCD().equalsIgnoreCase("baik")
+				|| ruangKelasObject.getKondisiKabelLCD().equalsIgnoreCase(
+						"berfungsi")) {
+			System.out.println("KondisiKabelLCD : s");
+			Kesesuaian++;
+		} else {
+			System.out.println("Tidak s");
 		}
-	return Posisi_KipasAngin ;
-	}
-	public boolean Jumlah_AC(){
-		if(dataObject.getJumlah_AC()>=1){
-			Jumlah_AC = true ;
-		}else{
-			Jumlah_AC = false ;
+		if (ruangKelasObject.getPosisiKabelLCD().equalsIgnoreCase("dekatdosen")) {
+			System.out.println("PosisiKabelLCD : s");
+			Kesesuaian++;
+		} else {
+			System.out.println("Posisi kabel LCD Tidak sesuai");
 		}
-	return Jumlah_AC;	
-	}
-	public String Posisi_AC(){
-		if(dataObject.getPosisi_AC().equalsIgnoreCase("baik")&&dataObject.getPosisi_AC().equalsIgnoreCase("belakang")){
-			Posisi_AC = "belakang" ;
-		}else{
-			Posisi_AC = "depan" ;
+		if (ruangKelasObject.getJumlahLampu() >= 18) {
+			System.out.println("Jumlah Lampu Sesuai");
+			Kesesuaian++;
+		} else {
+			System.out.println("Jumlah Lampu tidak Sesuai");
 		}
-	return Posisi_AC ;
-	}
-	public boolean SSID (){
-		if(dataObject.getSSID().equalsIgnoreCase("UMM Hotspot")){
-			SSID = true ;
-		}else{
-			SSID = false ;
+		if (ruangKelasObject.getKondisiLampu().equalsIgnoreCase("baik")) {
+			System.out.println("Kondisi lampu sesuai");
+			Kesesuaian++;
+		} else {
+			System.out.println("kondisi Lampu tidak sesuai");
 		}
-	return SSID ;
-	}
-	public boolean Bandwith (){
-		if(dataObject.getBandwith()>=512){
-			Bandwith = true ;
-		}else{
-			Bandwith = false ;
+		if (ruangKelasObject.getPosisiLampu().equalsIgnoreCase("atap")) {
+			System.out.println("Posisi Lampu Sesuai");
+			Kesesuaian++;
+		} else {
+			System.out.println("Posisi Lampu tidak sesuai");
 		}
-	return Bandwith ;	
-	}
-	public boolean Jumlah_cctv (){
-		if(dataObject.getCctv()>=2){
-			Jumlah_cctv = true ;
-		}else{
-			Jumlah_cctv = false ;
+		if (ruangKelasObject.getJumlahKipasAngin() >= 2) {
+			System.out.println("Jumlah Kipas angin sesuai");
+			Kesesuaian++;
+		} else {
+			System.out.println("Jumlah kipas angin tidak sesuai");
 		}
-	return Jumlah_cctv;
-	}
-	public boolean posisi_cctv(){
-		if(dataObject.getPosisi_kipas_angin().equalsIgnoreCase("baik")&&dataObject.getPosisi_kipas_angin().equalsIgnoreCase("atap")){
-			posisi_cctv = true ;
-		}else{
-			posisi_cctv = false ;
+		if (ruangKelasObject.getPosisiKipasAngin().equalsIgnoreCase("atap")) {
+			System.out.println("Posisi kipas angin sesuai");
+			Kesesuaian++;
+		} else {
+			System.out.println("posisi Kipas Angin tidak sesuai");
 		}
-	return posisi_cctv;
-	}
-	public boolean kondisi_lantai(){
-		 if (dataObject.isKondisi_lantai() == true ){
-			kondisi_lantai = true; 
-		 }else{
-			 kondisi_lantai = false ;
-		 }
-	return kondisi_lantai;
-	}
-	public boolean Cahaya (){
-		if(dataObject.getCahaya()>=250){
-			Cahaya = true ;
-		}else{
-			Cahaya = false ;
+		if (ruangKelasObject.getKondisiKipasAngin().equalsIgnoreCase("baik")) {
+			System.out.println("Kondisi Kipas angin sesuai");
+			Kesesuaian++;
+		} else {
+			System.out.println("Kondisi kipas angin tidak sesuai");
 		}
-	return Cahaya ;		
-	}
-	public int Kelembaban(){
-		if(dataObject.getKelembaban() >= 70 && dataObject.getKelembaban() <= 80) {
-			kelembaban = 56 ;
-		}else{
-			kelembaban = 23 ;
+		if (ruangKelasObject.getJumlahAC() >= 1) {
+			System.out.println("Jumlah AC Sesuai");
+			Kesesuaian++;
+		} else {
+			System.out.println("Jumlah AC Tidak Sesuai");
 		}
-	return kelembaban;
-	}
-	public boolean kondisi_suhu(){
-		if (dataObject.getSuhu() >= 25 && dataObject.getSuhu() <= 35) {
-			kondisi_suhu = true ;
-		}else{
-			kondisi_suhu = false ;
+		if (ruangKelasObject.getKondisiAC().equalsIgnoreCase("baik")) {
+			System.out.println("KondisiAC : s");
+			Kesesuaian++;
+		} else {
+			System.out.println("Tidak s");
+			Kesesuaian++;
 		}
-	return kondisi_suhu;
-	}
-	public boolean kondisi_kebisingan(){
-		if (dataObject.isKebisingan() == true) {
-			kondisi_kebisingan = true ;
-		}else{
-			kondisi_kebisingan = false ;
+		if (ruangKelasObject.getPosisiAC().equalsIgnoreCase("belakang")
+				|| ruangKelasObject.getPosisiAC().equalsIgnoreCase("samping")) {
+			System.out.println("PosisiAC : s");
+			Kesesuaian++;
+		} else {
+			System.out.println("Tidak s");
 		}
-	return kondisi_kebisingan;
-	}
-	public boolean kondisi_bau (){
-		if(dataObject.isBau() == true ){
-			kondisi_bau = true ;
-		}else{
-			kondisi_bau = false ;
+		if (ruangKelasObject.getSSID().equalsIgnoreCase("ummhotspot")) {
+			System.out.println("getSSID : s");
+			Kesesuaian++;
+		} else {
+			System.out.println("Tidak s");
 		}
-	return kondisi_bau;
-	}
-	public boolean kondisi_kebocoran(){
-		if(dataObject.isKebocoran() == true ){
-			kondisi_kebocoran = true ;
-		}else{
-			kondisi_kebocoran = false ;
+		if (ruangKelasObject.getBandwidth().equalsIgnoreCase("bisa")) {
+			System.out.println("Bandwidth : s");
+			Kesesuaian++;
+		} else {
+			System.out.println("Tidak s");
 		}
-	return kondisi_kebocoran;
-	}
-	public boolean kondisi_keausan(){
-		if (dataObject.isKeausan()== true) {
-			kondisi_keausan = true ;
-		}else{
-			kondisi_keausan = false ;
+		if (ruangKelasObject.getJumlahCCTV() >= 2) {
+			System.out.println("JumlahCCTV : s");
+			Kesesuaian++;
+		} else {
+			System.out.println("Tidak s");
 		}
-	return kondisi_keausan;
+		if (ruangKelasObject.getKondisiCCTV().equalsIgnoreCase("baik")) {
+			System.out.println("KondisiCCTV : s");
+			Kesesuaian++;
+		} else {
+			System.out.println("Tidak s");
+		}
+		if (ruangKelasObject.getPosisiCCTV().equalsIgnoreCase("depanbelakang")) {
+			System.out.println("PosisiCCTV : s");
+			Kesesuaian++;
+		} else {
+			System.out.println("Tidak s");
+		}
+		OutputObject.get(ruangKelasObject.getJumlahStopKontak(),
+				ruangKelasObject.getKondisiStopKontak(),
+				ruangKelasObject.getPosisiStopKontak(),
+				ruangKelasObject.getJumlahKabelLCD(),
+				ruangKelasObject.getKondisiKabelLCD(),
+				ruangKelasObject.getPosisiKabelLCD(),
+				ruangKelasObject.getJumlahLampu(),
+				ruangKelasObject.getKondisiLampu(),
+				ruangKelasObject.getPosisiLampu(),
+				ruangKelasObject.getJumlahKipasAngin(),
+				ruangKelasObject.getKondisiKipasAngin(),
+				ruangKelasObject.getPosisiKipasAngin(),
+				ruangKelasObject.getJumlahAC(),
+				ruangKelasObject.getKondisiAC(),
+				ruangKelasObject.getPosisiAC(), ruangKelasObject.getSSID(),
+				ruangKelasObject.getBandwidth(),
+				ruangKelasObject.getJumlahCCTV(),
+				ruangKelasObject.getKondisiCCTV(),
+				ruangKelasObject.getPosisiCCTV());
+		return Kesesuaian;
 	}
-	
 }

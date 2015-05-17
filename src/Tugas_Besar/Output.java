@@ -1,95 +1,90 @@
 package Tugas_Besar;
-public class Output extends data{
-	data dataObject = new data();
-	Analisis AnalisisObject = new Analisis();
-	public void DeklarasiRuangan(){
-		System.out.println("Nama Ruang : "+dataObject.getNama_ruang());	
-	}
-	public void LuasRuangan(){
-		System.out.println("Luas Ruangan : "+AnalisisObject.LuasRuangan);
-	}
-	public void BentukRuangan(){
-		System.out.println("persegi panjang : "+dataObject.getLuas_ruangan());
-	}
-	public void RasioLuas(){
-		System.out.println("Rasio luas "+dataObject.getJumlah_kursi());
-	}
-	public void Pintu (){
-		System.out.println("Jumlah pintu : "+dataObject.getJumlah_pintu());
-	}
-	public void cendela(){
-		System.out.println("jumlah jendela : "+dataObject.getJumlah_cendela());
-	}
-	public void Kelistrikan_StopKontak(){
-		System.out.println("Jika stop kontak : "+dataObject.getStop_kontak());
-	}
-	public void PosisiStopKontak(){
-		System.out.println("jika stop kontak berada di :"+dataObject.getPosisi_stop_kontak());
-	}
-	public void JumlahKabel_LCD(){
-		System.out.println("Jumlah Kbel LCD :"+dataObject.getJumlah_kabel_LCD());
-	}
-	public void PosisiKabel_LCD(){
-		System.out.println("Jika posisi kabel :"+dataObject.getPosisi_kabel_LCD());
-	}
-	public void Jumlah_Lampu(){
-		System.out.println("Jumlah lampu :"+dataObject.getJumlah_lampu());
-	}
-	public void Posisi_Lampu(){
-		System.out.println("Jika lampu : "+dataObject.getPosisi_lampu());
-	}
-	public void JumlahKipas_Angin(){
-		System.out.println("Jumlah kipas :"+dataObject.getKipas_angin());
-	}
-	public void Posisi_KipasAngin(){
-		System.out.println("Jika kipas angin :"+dataObject.getPosisi_kipas_angin());
-	}
-	public void Jumlah_AC(){
-		System.out.println("Jumlah AC :"+dataObject.getJumlah_AC());
-	}
-	public void Posisi_AC(){
-		System.out.println("Jika AC :"+dataObject.getPosisi_AC());
-	}
-	public void SSID(){
-		System.out.println("SSID :"+dataObject.getSSID());
-	}
-	public void Bandwith(){
-		System.out.println("Bandwith :"+dataObject.getBandwith());
-	}
-	public void Jumlah_cctv(){
-		System.out.println("Jumlah cctv :"+dataObject.getCctv());
-	}
-	public void posisi_cctv(){
-		System.out.println("JIka cctv :"+dataObject.getPosisi_cctv());
-	}
-	public void kondisi_lantai(){
-		System.out.println("Jika kondisi lantai :"+dataObject.isKondisi_lantai());
-	}
-	public void Cahaya(){
-		System.out.println("Jika cahaya :"+dataObject.getCahaya());
-	}
-	
-	public void Kelembaban(){
-		System.out.println("Jika tingkat kelembaban :"+dataObject.getKelembaban());
-	}
-	public void kondisi_suhu(){
-		System.out.println("Kondisi tingkat suhu :"+dataObject.getSuhu());
-	}
-	public void kondisi_kebisingan(){
-		System.out.println("Jika kondisi bising :"+dataObject.isKebisingan());
-	}
-	public void kondisi_bau(){
-		System.out.println("jika bau :"+dataObject.isBau());
-	}
-	public void kondisi_kebocoran(){
-		System.out.println("jika kondisi bocor :"+dataObject.isKebocoran());
-	}
-	public void kondisi_keausan (){
-		System.out.println("Jika kondisi aua :"+dataObject.isKeausan());
-	}
-	public void kondisi_kekokohan(){
-		System.out.println("Jika kondisi kokoh :"+dataObject.isKekokohan());
-	}
-	
-}
 
+public class Output {
+
+	void get(String NamaRuang, String LokasiRuang, String ProgramStudi,
+			String Fakultas) {
+		System.out.println("=========Identitas Kelas=========");
+		System.out.println("Nama Ruang : " + NamaRuang);
+		System.out.println("klskasi Ruang : " + LokasiRuang);
+		System.out.println("Fakultas : " + Fakultas);
+		System.out.println("Program Studi : " + ProgramStudi);
+	}
+
+	void get(int PanjangRuang, int LebarRuang, int JumlahKursi,
+			int JumlahPintu, int JumlahJendela) {
+		System.out.println("=========Kondisi Ruang Kelas=========");
+		System.out.println("Panjang Ruang : " + PanjangRuang);
+		System.out.println("Lebar Ruang : " + LebarRuang);
+		System.out.println("Jumlah Kursi : " + JumlahKursi);
+		System.out.println("Jumlah Pintu : " + JumlahPintu);
+		System.out.println("Jumlah Jendela : " + JumlahJendela);
+	}
+
+	void get(int JumlahStopKontak, String KondisiStopKontak,
+			String PosisiStopKontak, int JumlahKabelLCD,
+			String KondisiKabelLCD, String PosisiKabelLCD, int JumlahLampu,
+			String KondisiLampu, String PosisiLampu, int JumlahKipasAngin,
+			String KondisiKipasAngin, String PosisiKipasAngin, int JumlahAC,
+			String KondisiAC, String PosisiAC, String SSID, String Bandwidth,
+			int JumlahCCTV, String KondisiCCTV, String PosisiCCTV) {
+		System.out.println("=========Kondisi Sarana=========");
+		System.out.println("Jumlah Stop Kontak : " + JumlahStopKontak);
+		System.out.println("Kondisi Stop Kontak : " + KondisiStopKontak);
+		System.out.println("Posisi Stop Kontak : " + PosisiStopKontak);
+		System.out.println("Jumlah Kabel LCD : " + JumlahKabelLCD);
+		System.out.println("Kondisi Kabel LCD : " + KondisiKabelLCD);
+		System.out.println("Posisi Kabel LCD : " + PosisiKabelLCD);
+		System.out.println("Jumlah Lampu : " + JumlahLampu);
+		System.out.println("Kondisi Lampu : " + KondisiLampu);
+		System.out.println("Posisi Lampu : " + PosisiLampu);
+		System.out.println("Jumlah Kipas Angin : " + JumlahKipasAngin);
+		System.out.println("Kondisi Kipas Angin : " + KondisiKipasAngin);
+		System.out.println("Posisi Kipas Angin : " + PosisiKipasAngin);
+		System.out.println("Jumlah AC : " + JumlahAC);
+		System.out.println("Kondisi AC : " + KondisiAC);
+		System.out.println("Posisi AC : " + PosisiAC);
+		System.out.println("SSID : " + SSID);
+		System.out.println("Bandwidth : " + Bandwidth);
+		System.out.println("Jumlah CCTV : " + JumlahCCTV);
+		System.out.println("Kondisi CCTV : " + KondisiCCTV);
+		System.out.println("Posisi CCTV : " + PosisiCCTV);
+	}
+
+	void get(String KondisiLantai, String KondisiDinding,
+			String KondisiAtap, String KondisiPintu, String KondisiJendela) {
+		System.out
+				.println("===============Kondisi Lingkungan=================");
+		System.out.println("Kondisi Lantai : " + KondisiLantai);
+		System.out.println("Kondisi Dinding : " + KondisiDinding);
+		System.out.println("Kondisi Atap : " + KondisiAtap);
+		System.out.println("Kondisi Pintu : " + KondisiPintu);
+		System.out.println("Kondisi Jendela : " + KondisiJendela);
+	}
+
+	void get(String SirkulasiUdara, int NilaiPencahayaan, int Kelembaban,
+			int Suhu) {
+		System.out.println("===============Kenyamanan================");
+		System.out.println("Sirkulasi Udara : " + SirkulasiUdara);
+		System.out.println("Nilai Pencahayaan " + NilaiPencahayaan);
+		System.out.println("Kelembaban : " + Kelembaban);
+		System.out.println("Suhu : " + Suhu);
+	}
+
+	void get(String Kebisingan, String Bau, String Kebocoran,
+			String Kerusakan, String Keausan, String x) {
+		System.out.println("===============Keamanan===============");
+		System.out.println("Kebisingan : " + Kebisingan);
+		System.out.println("Bau : " + Bau);
+		System.out.println("Kebocoran : " + Kebocoran);
+		System.out.println("Kerusakan : " + Kerusakan);
+		System.out.println("Keausan : " + Keausan);
+	}
+
+	void get(String Kekokohan, String KunciPintuJendela, String Bahaya) {
+		System.out.println("===============Keamanan===============");
+		System.out.println("Kekokohan : " + Kekokohan);
+		System.out.println("Kunci Pintu dan Jendela : " + KunciPintuJendela);
+		System.out.println("Bahaya : " + Bahaya);
+	}
+}
