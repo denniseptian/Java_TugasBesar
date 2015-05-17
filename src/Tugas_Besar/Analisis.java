@@ -1,6 +1,6 @@
 package Tugas_Besar;
 
-public class Analisis {
+public class Analisis extends Master{
 	Input InputObject = new Input();
 	Output OutputObject = new Output();
 	RuangKelas ruangKelasObject = new RuangKelas();
@@ -31,7 +31,7 @@ public class Analisis {
 		return Luas;
 	}
 
-	void KondsiRuangan() {
+	void KondsiRuang() {
 		
 		if (ruangKelasObject.getPanjangRuang() != ruangKelasObject
 				.getLebarRuang()) {

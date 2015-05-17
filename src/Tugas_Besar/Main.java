@@ -7,7 +7,7 @@ public class Main {
 	static Analisis AnalisisObject = new Analisis();
 	public static void main(String args []){
 		Masukan.KondisiRuang();
-		AnalisisObject.KondsiRuangan();
+		AnalisisObject.KondsiRuang();
 		
 	}
 	// End of this session!

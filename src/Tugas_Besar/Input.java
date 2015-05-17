@@ -2,7 +2,7 @@ package Tugas_Besar;
 
 import java.util.Scanner;
 
-public class Input {
+public class Input extends Master {
 	RuangKelas RuangKelasObject = new RuangKelas();
 	RuangKelas Ruang;
 	Scanner scan = new Scanner(System.in);
