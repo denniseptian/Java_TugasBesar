@@ -5,7 +5,9 @@ public abstract class Master {
 		System.out.println("Halaman " + Masukan);
 	}
 
-	abstract void KondisiRuang();
+	void KondisiRuang(String KondisiRuang){
+		System.out.println("Kondisi Ruang" + KondisiRuang);
+	}
 
 	abstract void Sarana();
 

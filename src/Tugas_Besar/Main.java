@@ -7,6 +7,7 @@ public class Main {
 
 	public static void main(String args[]) {
 		Masukan.NamaKelas();
+		Keluaran.
 
 	}
 	// End of this session!
