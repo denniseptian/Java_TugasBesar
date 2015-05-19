@@ -1,8 +1,8 @@
 package Tugas_Besar;
 
-public class Output {
+public class Output implements InterClass{
 
-	void get(String NamaRuang, String LokasiRuang, String ProgramStudi,
+	public void get(String NamaRuang, String LokasiRuang, String ProgramStudi,
 			String Fakultas) {
 		System.out.println("=========Identitas Kelas=========");
 		System.out.println("Nama Ruang : " + NamaRuang);
@@ -11,7 +11,7 @@ public class Output {
 		System.out.println("Program Studi : " + ProgramStudi);
 	}
 
-	void get(int PanjangRuang, int LebarRuang, int JumlahKursi,
+	public void get(int PanjangRuang, int LebarRuang, int JumlahKursi,
 			int JumlahPintu, int JumlahJendela) {
 		System.out.println("=========Kondisi Ruang Kelas=========");
 		System.out.println("Panjang Ruang : " + PanjangRuang);
@@ -21,7 +21,7 @@ public class Output {
 		System.out.println("Jumlah Jendela : " + JumlahJendela);
 	}
 
-	void get(int JumlahStopKontak, String KondisiStopKontak,
+	public void get(int JumlahStopKontak, String KondisiStopKontak,
 			String PosisiStopKontak, int JumlahKabelLCD,
 			String KondisiKabelLCD, String PosisiKabelLCD, int JumlahLampu,
 			String KondisiLampu, String PosisiLampu, int JumlahKipasAngin,
@@ -51,7 +51,7 @@ public class Output {
 		System.out.println("Posisi CCTV : " + PosisiCCTV);
 	}
 
-	void get(String KondisiLantai, String KondisiDinding,
+	public void get(String KondisiLantai, String KondisiDinding,
 			String KondisiAtap, String KondisiPintu, String KondisiJendela) {
 		System.out
 				.println("===============Kondisi Lingkungan=================");
@@ -62,7 +62,7 @@ public class Output {
 		System.out.println("Kondisi Jendela : " + KondisiJendela);
 	}
 
-	void get(String SirkulasiUdara, int NilaiPencahayaan, int Kelembaban,
+	public void get(String SirkulasiUdara, int NilaiPencahayaan, int Kelembaban,
 			int Suhu) {
 		System.out.println("===============Kenyamanan================");
 		System.out.println("Sirkulasi Udara : " + SirkulasiUdara);
@@ -71,7 +71,7 @@ public class Output {
 		System.out.println("Suhu : " + Suhu);
 	}
 
-	void get(String Kebisingan, String Bau, String Kebocoran,
+	public void get(String Kebisingan, String Bau, String Kebocoran,
 			String Kerusakan, String Keausan, String x) {
 		System.out.println("===============Keamanan===============");
 		System.out.println("Kebisingan : " + Kebisingan);
@@ -81,7 +81,7 @@ public class Output {
 		System.out.println("Keausan : " + Keausan);
 	}
 
-	void get(String Kekokohan, String KunciPintuJendela, String Bahaya) {
+	public void get(String Kekokohan, String KunciPintuJendela, String Bahaya) {
 		System.out.println("===============Keamanan===============");
 		System.out.println("Kekokohan : " + Kekokohan);
 		System.out.println("Kunci Pintu dan Jendela : " + KunciPintuJendela);

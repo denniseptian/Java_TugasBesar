@@ -12,6 +12,7 @@ public class Input extends Master {
 	}
 
 	void NamaKelas() {
+		Header("Input Kelas");
 		System.out.println("Masukkan Nama Ruang : ");
 		RuangKelasObject.setNamaRuang(scan.nextLine());
 		System.out.println("Masukkan Lokasi Ruang : ");
@@ -28,7 +29,7 @@ public class Input extends Master {
 	}
 
 	void KondisiRuang() {
-
+		Header("Kondisi Ruang");
 		System.out.println("Masukkan Panjang Ruang : ");
 		RuangKelasObject.setPanjangRuang(scan.nextInt());
 		System.out.println("Masukkan Lebar Ruang : ");
@@ -47,6 +48,7 @@ public class Input extends Master {
 	}
 
 	void Sarana() {
+		Header("Kondisi Sarana");
 		System.out.println("Masukkan Jumlah Stop Kontak : ");
 		RuangKelasObject.setJumlahStopKontak(scan.nextInt());
 		System.out.println("Masukkan Kondisi Stop Kontak : ");
@@ -109,6 +111,7 @@ public class Input extends Master {
 	}
 
 	void KondisiKelas() {
+		Header("Kondisi Kelas");
 		System.out.println("Masukkan Kondisi Lantai : ");
 		RuangKelasObject.setKondisiLantai(scan.next());
 		System.out.println("Masukkan Kondisi Dinding : ");
@@ -127,6 +130,7 @@ public class Input extends Master {
 	}
 
 	void Kebersihan() {
+		Header("Kondisi Kebersihan");
 		System.out.println("Masukkan Sirkulasi Udara: ");
 		RuangKelasObject.setSirkulasiUdara(scan.next());
 		System.out.println("Masukkan Nilai Pencahayaan : ");
@@ -141,6 +145,7 @@ public class Input extends Master {
 	}
 
 	void Kenyamanan() {
+		Header("Kondisi Kenyamanan");
 		System.out.println("Masukkan Kebisingan : ");
 		RuangKelasObject.setKebisingan(scan.next());
 		System.out.println("Masukkan Bau : ");
@@ -158,6 +163,7 @@ public class Input extends Master {
 	}
 
 	void Keamanan() {
+		Header("Kondisi Keamanan");
 		System.out.println("Masukkan Kekokohan : ");
 		RuangKelasObject.setKekokohan(scan.next());
 		System.out.println("Masukkan Kunci Pintu dan Jendela : ");

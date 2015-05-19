@@ -1,23 +1,17 @@
 package Tugas_Besar;
 
-public class Master {
-	void KondisiRuang() {
-
+public abstract class Master {
+	void Header(String Masukan) {
+		System.out.println("Halaman " + Masukan);
 	}
 
-	void Sarana() {
+	abstract void KondisiRuang();
 
-	}
+	abstract void Sarana();
 
-	void Kebersihan() {
+	abstract void Kebersihan();
 
-	}
+	abstract void Kenyamanan();
 
-	void Kenyamanan() {
-
-	}
-
-	void Keamanan() {
-
-	}
+	abstract void Keamanan();
 }

@@ -1,9 +1,13 @@
 package Tugas_Besar;
 
-public class Analisis extends Master{
+public class Analisis extends Master {
 	Input InputObject = new Input();
 	Output OutputObject = new Output();
 	RuangKelas ruangKelasObject = new RuangKelas();
+
+	public Analisis() {
+
+	}
 
 	int Kesesuaian = 0;
 	private double Luas;
@@ -31,8 +35,14 @@ public class Analisis extends Master{
 		return Luas;
 	}
 
-	void KondsiRuang() {
-		
+	@Override
+	void Header(String Masukan) {
+
+	}
+
+	@Override
+	void KondisiRuang() {
+
 		if (ruangKelasObject.getPanjangRuang() != ruangKelasObject
 				.getLebarRuang()) {
 			System.out.println("Bentuk Ruangan Persegi panjang");
@@ -218,5 +228,29 @@ public class Analisis extends Master{
 				ruangKelasObject.getKondisiCCTV(),
 				ruangKelasObject.getPosisiCCTV());
 		return Kesesuaian;
+	}
+
+	@Override
+	void Sarana() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	void Kebersihan() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	void Kenyamanan() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	void Keamanan() {
+		// TODO Auto-generated method stub
+
 	}
 }
