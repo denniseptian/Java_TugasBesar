@@ -5,15 +5,24 @@ public abstract class Master {
 		System.out.println("Halaman " + Masukan);
 	}
 
-	void KondisiRuang(String KondisiRuang){
-		System.out.println("Kondisi Ruang" + KondisiRuang);
+	void NamaKelas() {
 	}
 
-	abstract void Sarana();
+	void KondisiRuang() {
+	}
 
-	abstract void Kebersihan();
+	void Sarana() {
+	}
 
-	abstract void Kenyamanan();
+	void KondisiKelas() {
+	}
 
-	abstract void Keamanan();
+	void Kebersihan() {
+	}
+
+	void Kenyamanan() {
+	}
+
+	void Keamanan() {
+	}
 }

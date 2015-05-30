@@ -1,6 +1,15 @@
 package Tugas_Besar;
 
-public class Output implements InterClass{
+public class Output implements InterClass {
+	RuangKelas RuangKelasObject = new RuangKelas();
+	RuangKelas Ruang;
+
+	public RuangKelas getRuangKelas() {
+		return Ruang;
+	}
+
+	public Output() {
+	}
 
 	public void get(String NamaRuang, String LokasiRuang, String ProgramStudi,
 			String Fakultas) {
@@ -62,8 +71,8 @@ public class Output implements InterClass{
 		System.out.println("Kondisi Jendela : " + KondisiJendela);
 	}
 
-	public void get(String SirkulasiUdara, int NilaiPencahayaan, int Kelembaban,
-			int Suhu) {
+	public void get(String SirkulasiUdara, int NilaiPencahayaan,
+			int Kelembaban, int Suhu) {
 		System.out.println("===============Kenyamanan================");
 		System.out.println("Sirkulasi Udara : " + SirkulasiUdara);
 		System.out.println("Nilai Pencahayaan " + NilaiPencahayaan);

@@ -1,12 +1,17 @@
 package Tugas_Besar;
 
-public class Analisis extends Master {
+public class Analisis {
 	Input InputObject = new Input();
 	Output OutputObject = new Output();
 	RuangKelas ruangKelasObject = new RuangKelas();
+	RuangKelas RuangKelasOfObject;
 
 	public Analisis() {
 
+	}
+
+	public RuangKelas getRuangKelas() {
+		return RuangKelasOfObject;
 	}
 
 	int Kesesuaian = 0;
@@ -29,24 +34,25 @@ public class Analisis extends Master {
 		Rasio = rasio;
 	}
 
-	double Luas() {
+	void NamaRuang() {
+		InputObject.NamaKelas();
+		ruangKelasObject = InputObject.getRuangKelas();
+		OutputObject.get(ruangKelasObject.getNamaRuang(),
+				ruangKelasObject.getLokasiRuang(),
+				ruangKelasObject.getProgramStudi(),
+				ruangKelasObject.getFakultas());
+	}
+
+	double KondisiRuang() {
+		InputObject.KondisiRuang();
+		ruangKelasObject = InputObject.getRuangKelas();
+
 		Luas = ruangKelasObject.getPanjangRuang()
 				* ruangKelasObject.getLebarRuang();
-		return Luas;
-	}
-
-	@Override
-	void Header(String Masukan) {
-
-	}
-
-	@Override
-	void KondisiRuang() {
-
 		if (ruangKelasObject.getPanjangRuang() != ruangKelasObject
 				.getLebarRuang()) {
 			System.out.println("Bentuk Ruangan Persegi panjang");
-			System.out.println("Ruangan Sesuai");
+
 		} else {
 			System.out.println("Bentuk Ruangan Tidak Persegi panjang");
 			System.out.println("Ruangan Sesuai");
@@ -76,10 +82,14 @@ public class Analisis extends Master {
 				ruangKelasObject.getJumlahPintu(),
 				ruangKelasObject.getJumlahJendela());
 
+		return Kesesuaian;
+
 	}
 
-	double KondisiKelas() {
+	double Sarana() {
+		InputObject.Sarana();
 		ruangKelasObject = InputObject.getRuangKelas();
+
 		if (ruangKelasObject.getJumlahStopKontak() >= 4) {
 			System.out.println("Jumlah Stop Kontak Sesuai");
 			Kesesuaian++;
@@ -229,28 +239,127 @@ public class Analisis extends Master {
 				ruangKelasObject.getPosisiCCTV());
 		return Kesesuaian;
 	}
+	
+	 int KondisiKelas() {
+       InputObject.KondisiKelas();
+       ruangKelasObject = InputObject.getRuangKelas();
+       if (ruangKelasObject.getKondisiLantai().equalsIgnoreCase("bersih")) {
+        System.out.println("getKondisiLantai : s");
+       } else {
+           System.out.println("Tidak s");
+       }
+       if (ruangKelasObject.getKondisiDinding().equalsIgnoreCase("bersih")){
+           System.out.println("KondisiDinding : s");
+      }else {
+           System.out.println("Tidak s");
+       }
+       if (ruangKelasObject.getKondisiAtap().equalsIgnoreCase("bersih")){
+           System.out.println("KondisiAtap : s");
+       }else{
+           System.out.println("Tidak s");
+       }
+       if (ruangKelasObject.getKondisiPintu().equalsIgnoreCase("bersih")){
+           System.out.println("KondisiPintu : s");
+       }else {
+           System.out.println("Tidak s");
+       }
+       if (ruangKelasObject.getKondisiJendela().equalsIgnoreCase("bersih")){
+           System.out.println("getKondisiJendela : s");
+       } else {
+           System.out.println("Tidak s");
+      }
+       return Kesesuaian;
+   }
+   
+   int CheckKondisiKebersihan() {
+       if ("Lancar".equalsIgnoreCase(ruangKelasObject.getSirkulasiUdara())) {
+           System.out.println("SirkulasiUdara : Lancar");
+         
+       } else {
+           System.out.println("Tidak Lancar");
+       
+       }
+       if (ruangKelasObject.getNilaiPencahayaan() >= 250) {
+           if (ruangKelasObject.getNilaiPencahayaan() <= 350) {
+               System.out.println("NilaiPencahayaan : s");
+           }
+        
+       } else {
+           System.out.println("Tidak s");
+          
+       }
+       if (ruangKelasObject.getKelembaban() >= 70) {
+           if (ruangKelasObject.getKelembaban() <= 80) {
+               System.out.println("Kelembaban : s");
+           }
+          
+       } else {
+           System.out.println("Tidak s");
+          
+       }
+       
+       if (ruangKelasObject.getSuhu() >= 25) {
+           if (ruangKelasObject.getSuhu() <= 35) {
+               System.out.println("Suhu : s");
+           }
+          
+       } else {
+           System.out.println("Tidak s");
+         
+       }
+       return Kesesuaian;
+   }
+  
+   int Kenyamanan() {
+	   if ("s".equalsIgnoreCase(ruangKelasObject.getKebisingan())) {
+		   System.out.println("Kebisingan : s");
+	   } else {
+		   System.out.println("Tidak s");
+	   }
+	   if ("s".equalsIgnoreCase(ruangKelasObject.getBau())) {
+		   System.out.println("Bau : s");
 
-	@Override
-	void Sarana() {
-		// TODO Auto-generated method stub
+	   } else {
+		   System.out.println("Tidak s");
 
-	}
+	   }
+	   if ("s".equalsIgnoreCase(ruangKelasObject.getKerusakan())) {
+		   System.out.println("Kerusakan : s");
 
-	@Override
-	void Kebersihan() {
-		// TODO Auto-generated method stub
+	   } else {
+		   System.out.println("Tidak s");
 
-	}
+	   }
+	   if ("s".equalsIgnoreCase(ruangKelasObject.getKeausan())) {
+		   System.out.println("Keausan : s");
+	   } else {
+		   System.out.println("Tidak s");
 
-	@Override
-	void Kenyamanan() {
-		// TODO Auto-generated method stub
+	   }
 
-	}
+       return Kesesuaian;
+   } 
+	   
 
-	@Override
-	void Keamanan() {
-		// TODO Auto-generated method stub
+   int CheckKondisiKeamanan() {
+       InputObject.Keamanan();
+       ruangKelasObject = InputObject.getRuangKelas();
+       if ("s".equalsIgnoreCase(ruangKelasObject.getKekokohan())) {
+           System.out.println("Kekokohan : s");
+       } else {
+           System.out.println("Tidak s");
+       }
+       if ("s".equalsIgnoreCase(ruangKelasObject.getKunciPintuJendela())) {
+           System.out.println("KunciPintuJendela : s");
+       } else {
+           System.out.println("Tidak s");
+       }
+       if ("s".equalsIgnoreCase(ruangKelasObject.getBahaya())) {
+           System.out.println("Bahaya : s");
+       } else {
+           System.out.println("Tidak s");
+       }
+       return Kesesuaian;
+   }
 
-	}
 }

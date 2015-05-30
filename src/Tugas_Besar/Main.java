@@ -6,11 +6,10 @@ public class Main {
 	static Analisis AnalisisObject = new Analisis();
 
 	public static void main(String args[]) {
-		Masukan.NamaKelas();
-		Keluaran.
+
+		AnalisisObject.KondisiRuang();
 
 	}
 	// End of this session!
-	// No Steps
-	// Roll
+
 }
