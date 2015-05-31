@@ -7,7 +7,8 @@ public class Main {
 
 	public static void main(String args[]) {
 
-		Koneksi konek = new Koneksi();
+		
+		AnalisisObject.KondisiRuang();
 		
 		
 

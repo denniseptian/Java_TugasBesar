@@ -2,6 +2,8 @@ package Tugas_Besar;
 
 import java.util.Scanner;
 
+import javax.swing.JTextField;
+
 public class Input extends Master {
 	RuangKelas RuangKelasObject = new RuangKelas();
 	RuangKelas Ruang;
@@ -9,6 +11,30 @@ public class Input extends Master {
 
 	public RuangKelas getRuangKelas() {
 		return Ruang;
+	}
+
+	public Input() {
+
+	}
+
+	public Input(JTextField PanjangRuangan, JTextField LebarRuangan,
+			JTextField JumlahKursi, JTextField JumlahPintu,
+			JTextField JumlahJendela) {
+		RuangKelasObject.setPanjangRuang(Integer.parseInt(PanjangRuangan
+				.getText()));
+		RuangKelasObject
+				.setLebarRuang(Integer.parseInt(LebarRuangan.getText()));
+		RuangKelasObject
+				.setJumlahPintu(Integer.parseInt(JumlahPintu.getText()));
+		RuangKelasObject
+				.setJumlahKursi(Integer.parseInt(JumlahKursi.getText()));
+		RuangKelasObject.setJumlahJendela(Integer.parseInt(JumlahJendela
+				.getText()));
+		Ruang = new RuangKelas(RuangKelasObject.getPanjangRuang(),
+				RuangKelasObject.getLebarRuang(),
+				RuangKelasObject.getJumlahKursi(),
+				RuangKelasObject.getJumlahPintu(),
+				RuangKelasObject.getJumlahJendela());
 	}
 
 	void NamaKelas() {

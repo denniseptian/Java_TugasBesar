@@ -1,8 +1,7 @@
 package Tugas_Besar;
 
 public interface InterClass {
-	void get(String NamaRuang, String LokasiRuang, String ProgramStudi,
-			String Fakultas);
+	
 
 	void get(int PanjangRuang, int LebarRuang, int JumlahKursi,
 			int JumlahPintu, int JumlahJendela);
