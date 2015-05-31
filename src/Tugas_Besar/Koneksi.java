@@ -5,10 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import koneksi.SettingUI;
 
-/**
- *
- * @author Deny SQP
- */
+
 public class Koneksi {
 
 	public SettingUI config = new SettingUI(null, true);
