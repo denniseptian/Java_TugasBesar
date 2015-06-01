@@ -33,6 +33,8 @@ public class Analisis {
 	public void setRasio(double rasio) {
 		Rasio = rasio;
 	}
+	
+	
 
 	void NamaRuang() {
 		InputObject.NamaKelas();
@@ -43,8 +45,8 @@ public class Analisis {
 				ruangKelasObject.getFakultas());
 	}
 
-	double KondisiRuang() {
-		InputObject.KondisiRuang();
+	public double KondisiRuang() {
+		
 		ruangKelasObject = InputObject.getRuangKelas();
 
 		Luas = ruangKelasObject.getPanjangRuang()

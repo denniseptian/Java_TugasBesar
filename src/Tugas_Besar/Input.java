@@ -6,6 +6,7 @@ import javax.swing.JTextField;
 
 public class Input extends Master {
 	RuangKelas RuangKelasObject = new RuangKelas();
+	
 	RuangKelas Ruang;
 	Scanner scan = new Scanner(System.in);
 
@@ -17,26 +18,37 @@ public class Input extends Master {
 
 	}
 
-	public Input(JTextField PanjangRuangan, JTextField LebarRuangan,
-			JTextField JumlahKursi, JTextField JumlahPintu,
-			JTextField JumlahJendela) {
-		RuangKelasObject.setPanjangRuang(Integer.parseInt(PanjangRuangan
-				.getText()));
-		RuangKelasObject
-				.setLebarRuang(Integer.parseInt(LebarRuangan.getText()));
-		RuangKelasObject
-				.setJumlahPintu(Integer.parseInt(JumlahPintu.getText()));
-		RuangKelasObject
-				.setJumlahKursi(Integer.parseInt(JumlahKursi.getText()));
-		RuangKelasObject.setJumlahJendela(Integer.parseInt(JumlahJendela
-				.getText()));
+	public void input(JTextField NamaRuang, JTextField Fakultas,
+			JTextField Jurusan, String Gedung) {
+		RuangKelasObject.setNamaRuang(NamaRuang.getText());
+		RuangKelasObject.setFakultas(Fakultas.getText());
+		RuangKelasObject.setProgramStudi(Jurusan.getText());
+		RuangKelasObject.setLokasiRuang(Gedung);
+		
+		Ruang = new RuangKelas(RuangKelasObject.getNamaRuang(),
+				RuangKelasObject.getLokasiRuang(),
+				RuangKelasObject.getProgramStudi(),
+				RuangKelasObject.getFakultas());
+	}
+	
+	public void input(int panjang, int lebar, int JumlahKursi, int JumlahPintu, int JumlahJendela){
+		RuangKelasObject.setPanjangRuang(panjang);
+		RuangKelasObject.setLebarRuang(lebar);
+		RuangKelasObject.setJumlahKursi(JumlahKursi);
+		RuangKelasObject.setJumlahPintu(JumlahPintu);
+		RuangKelasObject.setJumlahJendela(JumlahJendela);
+		
+		System.out.println("panjang "+panjang);
+		
 		Ruang = new RuangKelas(RuangKelasObject.getPanjangRuang(),
 				RuangKelasObject.getLebarRuang(),
 				RuangKelasObject.getJumlahKursi(),
 				RuangKelasObject.getJumlahPintu(),
 				RuangKelasObject.getJumlahJendela());
+		
+		//analisisObject.KondisiRuang();
 	}
-
+	
 	void NamaKelas() {
 		Header("Input Kelas");
 		System.out.println("Masukkan Nama Ruang : ");
