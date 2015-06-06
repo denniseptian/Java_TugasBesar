@@ -407,24 +407,13 @@ public class inputForm extends JFrame {
 						 
 						 Input inputO = new Input();
 						 
-						 String tspin2 = spinner_2.getValue().toString();
-						 String tspin3 = spinner_3.getValue().toString();
-						 String tspin4 = spinner_4.getValue().toString();
-						 String tspin5 = spinner_5.getValue().toString();
-						 String tspin6 = spinner_6.getValue().toString();
-						 
-						 int spin2 = Integer.parseInt(tspin2);
-						 int spin3 = Integer.parseInt(tspin3);
-						 int spin4 = Integer.parseInt(tspin4);
-						 int spin5 = Integer.parseInt(tspin5);
-						 int spin6 = Integer.parseInt(tspin6);
 						 
 						try{
 							 String Combo1 = comboBox.getActionCommand();
 							 
-							System.out.println(spin2);
+							
 							//inputObject.input(textField, textField_1, textField_2, Combo1);
-							inputO.input(spin2, spin3, spin4, spin5, spin6);
+							inputO.input(spinner_2, spinner_3, spinner_4, spinner_5, spinner_6);
 							
 							 
 							 JOptionPane.showMessageDialog(null, "Selamat Penyimpanan Berhasil");
@@ -435,7 +424,6 @@ public class inputForm extends JFrame {
 						 
 					 }
 				}
-				
 			}
 		});
 		btnSave.setBounds(235, 352, 89, 23);

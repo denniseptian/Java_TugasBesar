@@ -2,6 +2,9 @@ package Tugas_Besar;
 
 import java.util.Scanner;
 
+import javafx.scene.control.Spinner;
+
+import javax.swing.JSpinner;
 import javax.swing.JTextField;
 
 public class Input extends Master {
@@ -31,14 +34,13 @@ public class Input extends Master {
 				RuangKelasObject.getFakultas());
 	}
 	
-	public void input(int panjang, int lebar, int JumlahKursi, int JumlahPintu, int JumlahJendela){
-		RuangKelasObject.setPanjangRuang(panjang);
-		RuangKelasObject.setLebarRuang(lebar);
-		RuangKelasObject.setJumlahKursi(JumlahKursi);
-		RuangKelasObject.setJumlahPintu(JumlahPintu);
-		RuangKelasObject.setJumlahJendela(JumlahJendela);
+	public void input(JSpinner panjang, JSpinner lebar, JSpinner JumlahKursi, JSpinner JumlahPintu, JSpinner JumlahJendela){
 		
-		System.out.println("panjang "+panjang);
+		RuangKelasObject.setPanjangRuang(Integer.parseInt(panjang.getValue().toString()));
+		RuangKelasObject.setLebarRuang(Integer.parseInt(lebar.getValue().toString()));
+		RuangKelasObject.setJumlahKursi(Integer.parseInt(JumlahKursi.getValue().toString()));
+		RuangKelasObject.setJumlahPintu(Integer.parseInt(JumlahPintu.getValue().toString()));
+		RuangKelasObject.setJumlahJendela(Integer.parseInt(JumlahJendela.getValue().toString()));
 		
 		Ruang = new RuangKelas(RuangKelasObject.getPanjangRuang(),
 				RuangKelasObject.getLebarRuang(),

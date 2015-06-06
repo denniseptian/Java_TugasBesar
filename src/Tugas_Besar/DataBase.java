@@ -82,7 +82,6 @@ public class DataBase {
 	}
 
 	void kondisiHapus(String Tabel, String Arrow, String id) {
-		// g = id.getText();
 		try {
 			Statement st = aplKoneksi.config.getConnection().createStatement();
 			st.executeUpdate(" delete from " + Tabel + " where " + Arrow
