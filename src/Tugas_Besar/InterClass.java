@@ -11,7 +11,7 @@ public interface InterClass {
 			String KondisiKabelLCD, String PosisiKabelLCD, int JumlahLampu,
 			String KondisiLampu, String PosisiLampu, int JumlahKipasAngin,
 			String KondisiKipasAngin, String PosisiKipasAngin, int JumlahAC,
-			String KondisiAC, String PosisiAC, String SSID, String Bandwidth,
+			String KondisiAC, String PosisiAC, String SSID, int Bandwidth,
 			int JumlahCCTV, String KondisiCCTV, String PosisiCCTV);
 
 	void get(String KondisiLantai, String KondisiDinding, String KondisiAtap,

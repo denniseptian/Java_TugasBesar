@@ -1,7 +1,7 @@
 package Tugas_Besar;
 
 public class Analisis {
-	Input InputObject = new Input();
+	//Input InputObject = new Input();
 	Output OutputObject = new Output();
 	RuangKelas ruangKelasObject = new RuangKelas();
 	RuangKelas RuangKelasOfObject;
@@ -36,18 +36,10 @@ public class Analisis {
 	
 	
 
-	void NamaRuang() {
-		InputObject.NamaKelas();
-		ruangKelasObject = InputObject.getRuangKelas();
-		OutputObject.get(ruangKelasObject.getNamaRuang(),
-				ruangKelasObject.getLokasiRuang(),
-				ruangKelasObject.getProgramStudi(),
-				ruangKelasObject.getFakultas());
-	}
-
+	
 	public double KondisiRuang() {
 		
-		ruangKelasObject = InputObject.getRuangKelas();
+		//ruangKelasObject = InputObject.getRuangKelas();
 
 		Luas = ruangKelasObject.getPanjangRuang()
 				* ruangKelasObject.getLebarRuang();
@@ -89,8 +81,8 @@ public class Analisis {
 	}
 
 	double Sarana() {
-		InputObject.Sarana();
-		ruangKelasObject = InputObject.getRuangKelas();
+		
+		//ruangKelasObject = InputObject.getRuangKelas();
 
 		if (ruangKelasObject.getJumlahStopKontak() >= 4) {
 			System.out.println("Jumlah Stop Kontak Sesuai");
@@ -196,8 +188,8 @@ public class Analisis {
 		} else {
 			System.out.println("Tidak s");
 		}
-		if (ruangKelasObject.getBandwidth().equalsIgnoreCase("bisa")) {
-			System.out.println("Bandwidth : s");
+		if (ruangKelasObject.getBandwidth()==512) {
+			System.out.println(512);
 			Kesesuaian++;
 		} else {
 			System.out.println("Tidak s");

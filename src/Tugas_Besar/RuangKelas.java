@@ -26,7 +26,7 @@ public class RuangKelas {
 	private String KondisiAC;
 	private String PosisiAC;
 	private String SSID;
-	private String Bandwidth;
+	private int Bandwidth;
 	private int JumlahCCTV;
 	private String KondisiCCTV;
 	private String PosisiCCTV;
@@ -57,11 +57,11 @@ public class RuangKelas {
 		this.Bahaya = Bahaya;
 	}
 
-	public String getBandwidth() {
+	public int getBandwidth() {
 		return Bandwidth;
 	}
 
-	public void setBandwidth(String Bandwidth) {
+	public void setBandwidth(int Bandwidth) {
 		this.Bandwidth = Bandwidth;
 	}
 
@@ -447,7 +447,7 @@ public class RuangKelas {
 			String KondisiKabelLCD, String PosisiKabelLCD, int JumlahLampu,
 			String KondisiLampu, String PosisiLampu, int JumlahKipasAngin,
 			String KondisiKipasAngin, String PosisiKipasAngin, int JumlahAC,
-			String KondisiAC, String PosisiAC, String SSID, String Bandwidth,
+			String KondisiAC, String PosisiAC, String SSID, int Bandwidth,
 			int JumlahCCTV, String KondisiCCTV, String PosisiCCTV) {
 		setJumlahStopKontak(JumlahStopKontak);
 		setKondisiStopKontak(KondisiStopKontak);

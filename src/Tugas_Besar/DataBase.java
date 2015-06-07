@@ -9,87 +9,199 @@ import javax.swing.table.TableColumn;
 
 public class DataBase {
 	DataBase() {
-		aplKoneksi.Database();
+		connection.Database();
 	}
+
+	RuangKelas ruangKelas = new RuangKelas();
+	RuangKelas ruang;
 
 	Integer baris;
-	Koneksi aplKoneksi = new Koneksi();
-	String a, b, c, d, e, f, g;
+	Koneksi connection = new Koneksi();
 
-	void kondisiSave(JTextField NM, JTextField LK, JTextField JR, JTextField FK) {
-
-		String a, b, C, D;
-		a = NM.getText();
-		b = JR.getText();
-		C = LK.getText();
-		D = FK.getText();
+	// For Name object
+	void Save(String NamaRuang, String LokasiRuang, String Prodi,
+			String Fakultas) {
 
 		try {
-			if (a.equals("") || C.equals("") || b.equals("") || D.equals("")) {
+			if (NamaRuang.equals("") || LokasiRuang.equals("")
+					|| Prodi.equals("") || Fakultas.equals("")) {
 				JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
 
 			} else {
 
-				Statement st = aplKoneksi.config.getConnection()
+				Statement statement = connection.config.getConnection()
 						.createStatement();
-				st.executeUpdate("insert into identitas"
-						+ "(nama, lokasi, prodi, fakultas) values ('" + a
-						+ "','" + C + "','" + b + "','" + D + "')");
+				statement
+						.executeUpdate("insert into identitas"
+						+ "(nama, lokasi, prodi, fakultas) values ('"
+						+ NamaRuang + "','" + LokasiRuang + "','" + Prodi
+						+ "','" + Fakultas + "')");
 
-				JOptionPane.showMessageDialog(null, "Data berhasil disimpan");
+				JOptionPane.showMessageDialog(null, "Save Succesfull");
 			}
-		} catch (SQLException ex) {
-			JOptionPane.showMessageDialog(null, "Data gagal disimpan! : " + ex);
+		} catch (SQLException x) {
+			JOptionPane.showMessageDialog(null, "Failed to saving : " + x);
 		}
-		NM.setEditable(false);
-		FK.setEditable(false);
-		LK.setEditable(false);
-		JR.setEditable(false);
+
 	}
 
-	void kondisiSave(JTextField txtValue1, JTextField txtValue2,
-			JTextField kursi, JTextField pintu, JTextField jendela) {
-
-		a = txtValue1.getText();
-		b = txtValue2.getText();
-		c = kursi.getText();
-		d = pintu.getText();
-		e = jendela.getText();
+	// for math class
+	void Save(int PanjangRuang, int LebarRuang, int JumlahKursi,
+			int JumlahPintu, int JumlahJendela) {
 		try {
-			if (a.equals("") || c.equals("") || b.equals("") || d.equals("")
-					|| e.equals("")) {
-				JOptionPane.showMessageDialog(null, "Data harus diisi semua!");
-
-			} else {
-
-				Statement st = aplKoneksi.config.getConnection()
-						.createStatement();
-				st.executeUpdate("insert into kondisi"
-						+ "(panjang, lebar, kursi, pintu, jendela) values ('"
-						+ a + "','" + b + "','" + c + "','" + d + "','" + e
-						+ "')");
-
-				JOptionPane.showMessageDialog(null, "Data berhasil disimpan");
-			}
-		} catch (SQLException ex) {
-			JOptionPane.showMessageDialog(null, "Data gagal disimpan! : " + ex);
+			Statement statement = connection.config.getConnection()
+					.createStatement();
+			statement
+					.executeUpdate("insert into kondisikelas"
+							+ "(panjangruang, lebarruang, jumlahkursi, jumlahpintu, jumlahjendela) values ('"
+							+ PanjangRuang + "','" + LebarRuang + "','"
+							+ JumlahKursi + "','" + JumlahKursi + "','"
+							+ JumlahJendela + "')");
+			JOptionPane.showMessageDialog(null, "Save Succesfull");
+		} catch (Exception x) {
+			JOptionPane.showMessageDialog(null, "Failed to saving : " + x);
 		}
-		txtValue1.setEditable(false);
-		txtValue2.setEditable(false);
-		kursi.setEditable(false);
-		pintu.setEditable(false);
-		jendela.setEditable(false);
+
+	}
+
+	// for sarana
+	void Save(int JumlahStopKontak, String KondisiStopKontak,
+			String PosisiStopKontak, int JumlahKabelLCD,
+			String KondisiKabelLCD, String PosisiKabelLCD, int JumlahLampu,
+			String KodisiLampu, String PosisiLampu, int JumlahKipasAngin,
+			String KondisiKipas, String PosisiKipasAngin, int JumlahAC,
+			String KondisiAC, String PosisiAC, String SSID, int Bandwith,
+			int JumlahCCTV, String KondisiCCTV, String PosisiCCTV) {
+		try {
+			Statement statement = connection.config.getConnection()
+					.createStatement();
+			statement
+					.executeUpdate("insert int sarana"
+							+ "(jumlahstopkontak, kondisistopkontak, posisistopkontak, jumlahkabellcd, kondisikabellcd, posisikabellcd, jumlahlampu, kondisilampu, posisilampu, jumlahkipasangin, kondisikipasangin, posisikipasangin, jumlahac, kondisiac, posisiac, ssid, bandwith, jumlahcctv, kondisicctv, posisicctv ) values ('"
+							+ JumlahStopKontak
+							+ "','"
+							+ KondisiStopKontak
+							+ "','"
+							+ PosisiStopKontak
+							+ "','"
+							+ JumlahKabelLCD
+							+ "','"
+							+ KondisiKabelLCD
+							+ "','"
+							+ PosisiKabelLCD
+							+ "','"
+							+ JumlahLampu
+							+ "','"
+							+ KodisiLampu
+							+ "','"
+							+ PosisiLampu
+							+ "','"
+							+ JumlahKipasAngin
+							+ "','"
+							+ KondisiKipas
+							+ "','"
+							+ PosisiKipasAngin
+							+ "','"
+							+ JumlahAC
+							+ "','"
+							+ PosisiAC
+							+ "','"
+							+ KondisiAC
+							+ "','"
+							+ SSID
+							+ "','"
+							+ Bandwith
+							+ "','"
+							+ JumlahCCTV
+							+ "','"
+							+ KondisiCCTV
+							+ "','"
+							+ PosisiCCTV + "')");
+			JOptionPane.showMessageDialog(null, "Save Succesfull");
+		} catch (Exception x) {
+			System.out.println("Failed to saving : " + x);
+		}
+	}
+
+	// for seng onok kotore
+	void Save(String KondisiLantai, String KondisiDinding, String KondisiAtap,
+			String KondisiPintu, String KondisiJendela) {
+		try {
+			Statement statement = connection.config.getConnection()
+					.createStatement();
+			statement
+					.executeUpdate("insert into kondisilingkungankelas"
+							+ "(kondisilantai, kondisidinding, kondisiatap, kondisipintu, kondisijendela) values ('"
+							+ KondisiLantai + "','" + KondisiDinding + "','"
+							+ KondisiAtap + "','" + KondisiPintu + "','"
+							+ KondisiJendela + "')");
+			JOptionPane.showMessageDialog(null, "Save Succesfull");
+		} catch (Exception x) {
+			JOptionPane.showMessageDialog(null, "Failed to saving : " + x);
+		}
+	}
+
+	// for kebersihan
+	void Save(String SirkulasiUdara, int Pencahayaan, int Kelembapan, int Suhu) {
+		try {
+
+			Statement statement = connection.config.getConnection()
+					.createStatement();
+			statement
+					.executeUpdate("insert into kondisikebersihan"
+							+ "(sirkulasiudara, pencahayaan, kelembapan, suhu) values ('"
+							+ SirkulasiUdara + "','" + Pencahayaan + "','"
+							+ Kelembapan + "','" + Suhu + "') ");
+			JOptionPane.showMessageDialog(null, "Save Succesfull");
+
+		} catch (Exception x) {
+			JOptionPane.showMessageDialog(null, "Failed to saving : " + x);
+		}
+	}
+
+	void SaveKenyamanan(String Kebisingan, String bau, String Kebocoran,
+			String Kerusakan, String Keausan) {
+		try {
+
+			Statement statement = connection.config.getConnection()
+					.createStatement();
+			statement
+					.executeUpdate("insert into kenyamanan"
+							+ "(kebisingan, bau, kebocoran, kerusakan, keausan) values ('"
+							+ Kebisingan + "','" + bau + "','" + Kebocoran
+							+ "','" + Kerusakan + "','" + Keausan + "')");
+
+			JOptionPane.showMessageDialog(null, "Save Succesfull");
+		} catch (Exception x) {
+			JOptionPane.showMessageDialog(null, "Failed to saving : " + x);
+		}
+	}
+
+	void Save(String kekokohan, String Kunci, String Bahaya) {
+		try {
+
+			Statement statement = connection.config.getConnection()
+					.createStatement();
+			statement
+					.executeUpdate("insert into keamanan"
+					+ "(kekokohan, kunci, bahaya) values ('" + kekokohan
+					+ "','" + Kunci + "','" + Bahaya + "')");
+
+			JOptionPane.showMessageDialog(null, "Save Succesfull");
+		} catch (Exception x) {
+			JOptionPane.showMessageDialog(null, "Failed to saving : " + x);
+		}
 	}
 
 	void kondisiHapus(String Tabel, String Arrow, String id) {
 		try {
-			Statement st = aplKoneksi.config.getConnection().createStatement();
+			Statement st = connection.config.getConnection().createStatement();
 			st.executeUpdate(" delete from " + Tabel + " where " + Arrow
 					+ " ='" + id + "'");
 
-			JOptionPane.showMessageDialog(null, "Data berhasil dihapus");
-		} catch (SQLException ex) {
-			JOptionPane.showMessageDialog(null, "Data gagal dihapus: " + ex);
+			JOptionPane.showMessageDialog(null, "Deleted");
+		} catch (Exception x) {
+			JOptionPane.showMessageDialog(null, "Failed to delete : " + x);
 		}
 	}
 

@@ -35,7 +35,7 @@ public class Output implements InterClass {
 			String KondisiKabelLCD, String PosisiKabelLCD, int JumlahLampu,
 			String KondisiLampu, String PosisiLampu, int JumlahKipasAngin,
 			String KondisiKipasAngin, String PosisiKipasAngin, int JumlahAC,
-			String KondisiAC, String PosisiAC, String SSID, String Bandwidth,
+			String KondisiAC, String PosisiAC, String SSID, int Bandwidth,
 			int JumlahCCTV, String KondisiCCTV, String PosisiCCTV) {
 		System.out.println("=========Kondisi Sarana=========");
 		System.out.println("Jumlah Stop Kontak : " + JumlahStopKontak);
