@@ -21,9 +21,9 @@ public class Input extends Master {
 	public Input() {
 
 	}
-	
-	public void inputKenyamanan(){
-		
+
+	public void inputKenyamanan() {
+
 	}
 
 	public void input(String NamaRuang, String LokasiRuang, String Jurusan,
@@ -51,7 +51,7 @@ public class Input extends Master {
 				RuangKelasObject.getJumlahPintu(),
 				RuangKelasObject.getJumlahJendela());
 		dataBase.Save(panjang, lebar, JumlahKursi, JumlahPintu, JumlahJendela);
-		
+
 	}
 
 	public void input(int JumlahStopKontak, String KondisiStopKontak,
@@ -103,11 +103,11 @@ public class Input extends Master {
 				RuangKelasObject.getKondisiCCTV(),
 				RuangKelasObject.getPosisiCCTV());
 
-	/* dataBase.Save(JumlahStopKontak, KondisiStopKontak, PosisiStopKontak,
+		dataBase.Save(JumlahStopKontak, KondisiStopKontak, PosisiStopKontak,
 				JumlahKabelLCD, KondisiKabelLCD, PosisiKabelLCD, JumlahLampu,
 				KondisiLampu, PosisiLampu, JumlahKipasAngin, KondisiKipas,
 				PosisiKipasAngin, JumlahAC, KondisiAC, PosisiAC, SSID,
-				Bandwith, JumlahCCTV, KondisiCCTV, PosisiCCTV);*/
+				Bandwith, JumlahCCTV, KondisiCCTV, PosisiCCTV);
 	}
 
 	public void inputKenyamanan(String KondisiLantai, String KondisiDinding,
@@ -125,8 +125,8 @@ public class Input extends Master {
 				RuangKelasObject.getKondisiPintu(),
 				RuangKelasObject.getKondisiJendela());
 
-		dataBase.Save(KondisiLantai, KondisiDinding, KondisiAtap,
-				KondisiPintu, KondisiJendela);
+		dataBase.Save(KondisiLantai, KondisiDinding, KondisiAtap, KondisiPintu,
+				KondisiJendela);
 	}
 
 	public void input(String SirkulasiUdara, int Pencahayaan, int Kelembapan,
@@ -140,7 +140,7 @@ public class Input extends Master {
 		Ruang = new RuangKelas(RuangKelasObject.getSirkulasiUdara(),
 				RuangKelasObject.getNilaiPencahayaan(),
 				RuangKelasObject.getKelembaban(), RuangKelasObject.getSuhu());
-		//dataBase.Save(SirkulasiUdara, Pencahayaan, Kelembapan, Suhu);
+		dataBase.Save(SirkulasiUdara, Pencahayaan, Kelembapan, Suhu);
 	}
 
 	public void input(String Kebisingan, String Bau, String Kebocoran,
@@ -156,7 +156,7 @@ public class Input extends Master {
 				RuangKelasObject.getBau(), RuangKelasObject.getKebocoran(),
 				RuangKelasObject.getKerusakan(), RuangKelasObject.getKeausan());
 
-		//dataBase.SaveKenyamanan(Kebisingan, Bau, Kebocoran, Kerusakan, Keausan);
+		dataBase.SaveKenyamanan(Kebisingan, Bau, Kebocoran, Kerusakan, Keausan);
 	}
 
 	public void input(String Kekokohan, String Kunci, String Bahaya) {
@@ -169,7 +169,7 @@ public class Input extends Master {
 				RuangKelasObject.getKunciPintuJendela(),
 				RuangKelasObject.getBahaya());
 
-		//dataBase.Save(Kekokohan, Kunci, Bahaya);
+		dataBase.Save(Kekokohan, Kunci, Bahaya);
 	}
 
 	/** End of new side **/

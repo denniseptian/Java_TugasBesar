@@ -7,6 +7,8 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableColumnModel;
 import javax.swing.table.TableColumn;
 
+/*** CRUD START WOOOYY ***/
+
 public class DataBase {
 	DataBase() {
 		connection.Database();
@@ -17,6 +19,8 @@ public class DataBase {
 
 	Integer baris;
 	Koneksi connection = new Koneksi();
+	
+	
 
 	// For Name object
 	void Save(String NamaRuang, String LokasiRuang, String Prodi,
@@ -76,7 +80,7 @@ public class DataBase {
 			Statement statement = connection.config.getConnection()
 					.createStatement();
 			statement
-					.executeUpdate("insert int sarana"
+					.executeUpdate("insert into sarana"
 							+ "(jumlahstopkontak, kondisistopkontak, posisistopkontak, jumlahkabellcd, kondisikabellcd, posisikabellcd, jumlahlampu, kondisilampu, posisilampu, jumlahkipasangin, kondisikipasangin, posisikipasangin, jumlahac, kondisiac, posisiac, ssid, bandwith, jumlahcctv, kondisicctv, posisicctv ) values ('"
 							+ JumlahStopKontak
 							+ "','"
@@ -193,7 +197,7 @@ public class DataBase {
 		}
 	}
 
-	void kondisiHapus(String Tabel, String Arrow, String id) {
+	void Delete(String Tabel, String Arrow, String id) {
 		try {
 			Statement st = connection.config.getConnection().createStatement();
 			st.executeUpdate(" delete from " + Tabel + " where " + Arrow

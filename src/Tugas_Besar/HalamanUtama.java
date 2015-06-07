@@ -16,9 +16,17 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JTextPane;
 import javax.swing.JTable;
+import java.sql.*;
 import java.awt.ScrollPane;
+import javax.swing.*;
 import javax.swing.JSpinner;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.ImageIcon;
+import javax.swing.ListSelectionModel;
+import javax.swing.JScrollPane;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
 
 public class HalamanUtama extends JFrame {
 
@@ -44,7 +52,9 @@ public class HalamanUtama extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	Connection connection = null;
 	public HalamanUtama() {
+		
 		setTitle("Inventaris");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 564, 306);
@@ -52,18 +62,6 @@ public class HalamanUtama extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		
-		table = new JTable();
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				
-			}
-		));
-		table.setBounds(10, 81, 451, 176);
-		contentPane.add(table);
 		
 		
 		JMenuBar menuBar = new JMenuBar();
@@ -74,10 +72,32 @@ public class HalamanUtama extends JFrame {
 		menuBar.add(mnMenu);
 		
 		JMenuItem mntmDataRuanganBaru = new JMenuItem("New Data");
+		mntmDataRuanganBaru.setIcon(new ImageIcon("D:\\Java\\Java_TugasBesar\\Java_TugasBesar\\1338978696_gtk-edit.png"));
 		mnMenu.add(mntmDataRuanganBaru);
 		
 		JMenuItem mntmEditData = new JMenuItem("Edit Data");
 		mnMenu.add(mntmEditData);
+		
+		JMenuItem mntmDeleteData = new JMenuItem("Delete Data");
+		mnMenu.add(mntmDeleteData);
+		
+		JMenuItem mntmLoadData = new JMenuItem("Load Data");
+		mnMenu.add(mntmLoadData);
+		
+		mntmLoadData.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				try{
+					String query = "select * from identitas";
+					
+				}catch(Exception x){
+					
+				}
+				
+			}
+		});
 		
 		JMenuItem mntmExit = new JMenuItem("Exit");
 		mnMenu.add(mntmExit);
@@ -108,6 +128,18 @@ public class HalamanUtama extends JFrame {
 		
 		JMenuItem mntmHelp = new JMenuItem("Help");
 		mnHelp.add(mntmHelp);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(10, 36, 528, 221);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 11, 508, 199);
+		panel.add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
 		
 		mntmExit.addActionListener(new ActionListener() {
 			

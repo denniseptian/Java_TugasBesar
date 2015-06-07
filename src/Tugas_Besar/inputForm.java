@@ -36,6 +36,7 @@ import javax.swing.JTextPane;
 import javax.swing.JTextArea;
 
 import com.sun.glass.events.KeyEvent;
+import javax.swing.JToggleButton;
 
 public class inputForm extends JFrame {
 
@@ -43,7 +44,6 @@ public class inputForm extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-	private JTextField textField_8;
 
 	/**
 	 * Launch the application.
@@ -60,14 +60,6 @@ public class inputForm extends JFrame {
 	String gkb1 = "GKB1";
 	String gkb2 = "GKB2";
 	String gkb3 = "GKB3";
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_10;
-	private JTextField textField_11;
-	private JTextField textField_12;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -192,11 +184,11 @@ public class inputForm extends JFrame {
 		panel_2.add(lblNewLabel_3);
 
 		JLabel lblNewLabel_4 = new JLabel("Kondisi");
-		lblNewLabel_4.setBounds(301, 11, 55, 14);
+		lblNewLabel_4.setBounds(432, 11, 55, 14);
 		panel_2.add(lblNewLabel_4);
 
 		JLabel lblNewLabel_5 = new JLabel("Posisi");
-		lblNewLabel_5.setBounds(458, 11, 46, 14);
+		lblNewLabel_5.setBounds(589, 11, 46, 14);
 		panel_2.add(lblNewLabel_5);
 
 		JLabel lblNewLabel_6 = new JLabel("Jumlah Kabel LCD");
@@ -227,141 +219,94 @@ public class inputForm extends JFrame {
 		lblNewLabel_26.setBounds(290, 223, 66, 14);
 		panel_2.add(lblNewLabel_26);
 
-		textField_3 = new JTextField();
-		textField_3.setBounds(138, 37, 86, 20);
-		panel_2.add(textField_3);
-		textField_3.setColumns(10);
+		JSlider slider_8 = new JSlider();
+		slider_8.setBounds(122, 40, 200, 23);
+		panel_2.add(slider_8);
 
-		JRadioButton rdbtnBaik = new JRadioButton("Baik");
-		rdbtnBaik.setBounds(339, 36, 85, 23);
-		panel_2.add(rdbtnBaik);
+		JSlider slider_9 = new JSlider();
+		slider_9.setBounds(122, 65, 200, 23);
+		panel_2.add(slider_9);
 
-		JRadioButton rdbtnRusak = new JRadioButton("Rusak");
-		rdbtnRusak.setBounds(244, 36, 93, 23);
-		panel_2.add(rdbtnRusak);
+		JSlider slider_10 = new JSlider();
+		slider_10.setBounds(122, 90, 200, 23);
+		panel_2.add(slider_10);
 
-		JRadioButton rdbtnPojok = new JRadioButton("Pojok");
-		rdbtnPojok.setBounds(426, 36, 77, 23);
-		panel_2.add(rdbtnPojok);
+		JSlider slider_11 = new JSlider();
+		slider_11.setBounds(122, 115, 200, 23);
+		panel_2.add(slider_11);
 
-		JRadioButton rdbtnTengah = new JRadioButton("Tengah");
-		rdbtnTengah.setBounds(505, 36, 109, 23);
-		panel_2.add(rdbtnTengah);
+		JSlider slider_12 = new JSlider();
+		slider_12.setBounds(122, 140, 200, 23);
+		panel_2.add(slider_12);
 
-		textField_4 = new JTextField();
-		textField_4.setBounds(138, 62, 86, 20);
-		panel_2.add(textField_4);
-		textField_4.setColumns(10);
+		JSlider slider_13 = new JSlider();
+		slider_13.setBounds(122, 165, 200, 23);
+		panel_2.add(slider_13);
 
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Rusak");
-		rdbtnNewRadioButton.setBounds(244, 61, 90, 23);
-		panel_2.add(rdbtnNewRadioButton);
+		String KondisiKabeh[] = { "Baik", "Rusak" };
 
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Bailk");
-		rdbtnNewRadioButton_1.setBounds(339, 61, 85, 23);
-		panel_2.add(rdbtnNewRadioButton_1);
+		JComboBox comboBox_15 = new JComboBox(KondisiKabeh);
+		comboBox_15.setBounds(380, 37, 136, 20);
+		panel_2.add(comboBox_15);
 
-		JRadioButton rdbtnPojok_1 = new JRadioButton("Pojok");
-		rdbtnPojok_1.setBounds(426, 61, 77, 23);
-		panel_2.add(rdbtnPojok_1);
+		JComboBox comboBox_16 = new JComboBox(KondisiKabeh);
+		comboBox_16.setBounds(380, 62, 136, 20);
+		panel_2.add(comboBox_16);
 
-		JRadioButton rdbtnTengah_1 = new JRadioButton("Tengah");
-		rdbtnTengah_1.setBounds(505, 61, 109, 23);
-		panel_2.add(rdbtnTengah_1);
+		JComboBox comboBox_17 = new JComboBox(KondisiKabeh);
+		comboBox_17.setBounds(380, 87, 136, 20);
+		panel_2.add(comboBox_17);
 
-		textField_5 = new JTextField();
-		textField_5.setBounds(138, 87, 86, 20);
-		panel_2.add(textField_5);
-		textField_5.setColumns(10);
+		JComboBox comboBox_18 = new JComboBox(KondisiKabeh);
+		comboBox_18.setBounds(380, 112, 136, 20);
+		panel_2.add(comboBox_18);
 
-		textField_6 = new JTextField();
-		textField_6.setBounds(138, 112, 86, 20);
-		panel_2.add(textField_6);
-		textField_6.setColumns(10);
+		JComboBox comboBox_19 = new JComboBox(KondisiKabeh);
+		comboBox_19.setBounds(380, 137, 136, 20);
+		panel_2.add(comboBox_19);
 
-		textField_7 = new JTextField();
-		textField_7.setBounds(138, 137, 86, 20);
-		panel_2.add(textField_7);
-		textField_7.setColumns(10);
+		JComboBox comboBox_20 = new JComboBox(KondisiKabeh);
+		comboBox_20.setBounds(380, 162, 136, 20);
+		panel_2.add(comboBox_20);
 
-		textField_10 = new JTextField();
-		textField_10.setBounds(138, 162, 86, 20);
-		panel_2.add(textField_10);
-		textField_10.setColumns(10);
+		String ComboStopKontak[] = { "Pojok Dekat Dosen", "Pojok Belakang" };
+		String ComboKabelLCD[] = { "Pojok Dekat Dosen", "Tengah" };
+		String PosisiLamuCombo[] = { "Atap", "Dinding" };
+		String ComboKipasAngin[] = { "Dinding Atas", "Atap" };
 
-		JRadioButton rdbtnNewRadioButton_2 = new JRadioButton("Rusak");
-		rdbtnNewRadioButton_2.setBounds(244, 86, 93, 23);
-		panel_2.add(rdbtnNewRadioButton_2);
+		JComboBox comboBox_21 = new JComboBox(ComboStopKontak);
+		comboBox_21.setBounds(553, 37, 118, 20);
+		panel_2.add(comboBox_21);
 
-		JRadioButton rdbtnNewRadioButton_3 = new JRadioButton("Rusak");
-		rdbtnNewRadioButton_3.setBounds(244, 111, 93, 23);
-		panel_2.add(rdbtnNewRadioButton_3);
+		JComboBox comboBox_22 = new JComboBox(ComboKabelLCD);
+		comboBox_22.setBounds(553, 62, 118, 20);
+		panel_2.add(comboBox_22);
 
-		JRadioButton rdbtnNewRadioButton_4 = new JRadioButton("Rusak");
-		rdbtnNewRadioButton_4.setBounds(244, 136, 93, 23);
-		panel_2.add(rdbtnNewRadioButton_4);
+		JComboBox comboBox_23 = new JComboBox(PosisiLamuCombo);
+		comboBox_23.setBounds(553, 87, 118, 20);
+		panel_2.add(comboBox_23);
 
-		JRadioButton rdbtnNewRadioButton_5 = new JRadioButton("Rusak");
-		rdbtnNewRadioButton_5.setBounds(244, 161, 93, 23);
-		panel_2.add(rdbtnNewRadioButton_5);
+		JComboBox comboBox_24 = new JComboBox(ComboKipasAngin);
+		comboBox_24.setBounds(553, 112, 118, 20);
+		panel_2.add(comboBox_24);
 
-		JRadioButton rdbtnNewRadioButton_6 = new JRadioButton("Baik");
-		rdbtnNewRadioButton_6.setBounds(339, 86, 86, 23);
-		panel_2.add(rdbtnNewRadioButton_6);
+		JComboBox comboBox_25 = new JComboBox(ComboKipasAngin);
+		comboBox_25.setBounds(553, 137, 118, 20);
+		panel_2.add(comboBox_25);
 
-		JRadioButton rdbtnNewRadioButton_7 = new JRadioButton("Baik");
-		rdbtnNewRadioButton_7.setBounds(339, 111, 86, 23);
-		panel_2.add(rdbtnNewRadioButton_7);
+		JComboBox comboBox_26 = new JComboBox(ComboKipasAngin);
+		comboBox_26.setBounds(553, 162, 118, 20);
+		panel_2.add(comboBox_26);
 
-		JRadioButton rdbtnNewRadioButton_8 = new JRadioButton("Baik");
-		rdbtnNewRadioButton_8.setBounds(339, 136, 86, 23);
-		panel_2.add(rdbtnNewRadioButton_8);
-
-		JRadioButton rdbtnNewRadioButton_9 = new JRadioButton("Baik");
-		rdbtnNewRadioButton_9.setBounds(339, 161, 86, 23);
-		panel_2.add(rdbtnNewRadioButton_9);
-
-		JRadioButton rdbtnNewRadioButton_10 = new JRadioButton("Atap");
-		rdbtnNewRadioButton_10.setBounds(426, 86, 78, 23);
-		panel_2.add(rdbtnNewRadioButton_10);
-
-		JRadioButton rdbtnNewRadioButton_11 = new JRadioButton("Atap");
-		rdbtnNewRadioButton_11.setBounds(426, 111, 78, 23);
-		panel_2.add(rdbtnNewRadioButton_11);
-
-		JRadioButton rdbtnNewRadioButton_12 = new JRadioButton("Atap");
-		rdbtnNewRadioButton_12.setBounds(426, 136, 78, 23);
-		panel_2.add(rdbtnNewRadioButton_12);
-
-		JRadioButton rdbtnNewRadioButton_13 = new JRadioButton("Atap");
-		rdbtnNewRadioButton_13.setBounds(426, 161, 78, 23);
-		panel_2.add(rdbtnNewRadioButton_13);
-
-		JRadioButton rdbtnNewRadioButton_14 = new JRadioButton("Tembok");
-		rdbtnNewRadioButton_14.setBounds(505, 86, 109, 23);
-		panel_2.add(rdbtnNewRadioButton_14);
-
-		JRadioButton rdbtnNewRadioButton_15 = new JRadioButton("Tembok");
-		rdbtnNewRadioButton_15.setBounds(505, 111, 109, 23);
-		panel_2.add(rdbtnNewRadioButton_15);
-
-		JRadioButton rdbtnNewRadioButton_16 = new JRadioButton("Tembok");
-		rdbtnNewRadioButton_16.setBounds(505, 136, 109, 23);
-		panel_2.add(rdbtnNewRadioButton_16);
-
-		JRadioButton rdbtnNewRadioButton_17 = new JRadioButton("Tembok");
-		rdbtnNewRadioButton_17.setBounds(505, 161, 109, 23);
-		panel_2.add(rdbtnNewRadioButton_17);
-
-		textField_11 = new JTextField();
-		textField_11.setBounds(138, 245, 86, 20);
-		panel_2.add(textField_11);
-		textField_11.setColumns(10);
-
-		textField_12 = new JTextField();
-		textField_12.setBounds(270, 245, 86, 20);
-		panel_2.add(textField_12);
-		textField_12.setColumns(10);
+		String bandwithJc[] = { "256", "512", "1024" };
+		JComboBox comboBox_27 = new JComboBox(bandwithJc);
+		comboBox_27.setBounds(267, 245, 89, 20);
+		panel_2.add(comboBox_27);
+		
+		String sSID[] = {"UMM Hotspot","Lain-nya"};
+		JComboBox comboBox_28 = new JComboBox(sSID);
+		comboBox_28.setBounds(84, 245, 127, 20);
+		panel_2.add(comboBox_28);
 
 		JPanel panel_3 = new JPanel();
 		tabbedPane.addTab("Lingkungan", null, panel_3, null);
@@ -387,70 +332,41 @@ public class inputForm extends JFrame {
 		lblKondisiJendela.setBounds(10, 160, 96, 14);
 		panel_3.add(lblKondisiJendela);
 
-		JRadioButton rdbtnNewRadioButton_18 = new JRadioButton("Bersih");
-		rdbtnNewRadioButton_18.setBounds(177, 56, 109, 23);
-		panel_3.add(rdbtnNewRadioButton_18);
-
-		JRadioButton rdbtnNewRadioButton_19 = new JRadioButton("Kotor");
-		rdbtnNewRadioButton_19.setBounds(307, 56, 109, 23);
-		panel_3.add(rdbtnNewRadioButton_19);
-		
 		ButtonGroup GroubKondisiLantai = new ButtonGroup();
-		 GroubKondisiLantai.add(rdbtnNewRadioButton_18);
-		 GroubKondisiLantai.add(rdbtnNewRadioButton_19);
-		
 
-		JRadioButton rdbtnNewRadioButton_20 = new JRadioButton("Bersih");
-		rdbtnNewRadioButton_20.setBounds(177, 81, 109, 23);
-		panel_3.add(rdbtnNewRadioButton_20);
-
-		JRadioButton rdbtnNewRadioButton_21 = new JRadioButton("Kotor");
-		rdbtnNewRadioButton_21.setBounds(307, 81, 109, 23);
-		panel_3.add(rdbtnNewRadioButton_21);
-		
 		ButtonGroup GroubKondisiDinding = new ButtonGroup();
-		GroubKondisiDinding.add(rdbtnNewRadioButton_20);
-		GroubKondisiDinding.add(rdbtnNewRadioButton_21);
 
-		JRadioButton rdbtnNewRadioButton_22 = new JRadioButton("Bersih");
-		rdbtnNewRadioButton_22.setBounds(177, 106, 109, 23);
-		panel_3.add(rdbtnNewRadioButton_22);
-
-		JRadioButton rdbtnNewRadioButton_23 = new JRadioButton("Kotor");
-		rdbtnNewRadioButton_23.setBounds(307, 106, 109, 23);
-		panel_3.add(rdbtnNewRadioButton_23);
-		
 		ButtonGroup GroupKondisiAtap = new ButtonGroup();
-		GroupKondisiAtap.add(rdbtnNewRadioButton_22);
-		GroupKondisiAtap.add(rdbtnNewRadioButton_23);
 
-		JRadioButton rdbtnNewRadioButton_24 = new JRadioButton("Bersih");
-		rdbtnNewRadioButton_24.setBounds(177, 131, 109, 23);
-		panel_3.add(rdbtnNewRadioButton_24);
-
-		JRadioButton rdbtnNewRadioButton_25 = new JRadioButton("Kotor");
-		rdbtnNewRadioButton_25.setBounds(307, 131, 109, 23);
-		panel_3.add(rdbtnNewRadioButton_25);
-		
 		ButtonGroup GroupKondisiPintu = new ButtonGroup();
-		GroupKondisiPintu.add(rdbtnNewRadioButton_24);
-		GroupKondisiPintu.add(rdbtnNewRadioButton_25);
 
-		JRadioButton rdbtnNewRadioButton_26 = new JRadioButton("Bersih");
-		rdbtnNewRadioButton_26.setBounds(177, 156, 109, 23);
-		panel_3.add(rdbtnNewRadioButton_26);
-
-		JRadioButton rdbtnNewRadioButton_27 = new JRadioButton("Kotor");
-		rdbtnNewRadioButton_27.setBounds(307, 156, 109, 23);
-		panel_3.add(rdbtnNewRadioButton_27);
-		
 		ButtonGroup GroubKondisiJendela = new ButtonGroup();
-		GroubKondisiJendela.add(rdbtnNewRadioButton_26);
-		GroubKondisiJendela.add(rdbtnNewRadioButton_27);
 
 		JLabel lblNewLabel_27 = new JLabel("Kondisi");
-		lblNewLabel_27.setBounds(232, 23, 70, 14);
+		lblNewLabel_27.setBounds(198, 37, 70, 14);
 		panel_3.add(lblNewLabel_27);
+
+		String Kebersihan[] = { "Bersih", "Kotor" };
+
+		JComboBox comboBox_2 = new JComboBox(Kebersihan);
+		comboBox_2.setBounds(155, 57, 147, 20);
+		panel_3.add(comboBox_2);
+
+		JComboBox comboBox_3 = new JComboBox(Kebersihan);
+		comboBox_3.setBounds(155, 82, 147, 20);
+		panel_3.add(comboBox_3);
+
+		JComboBox comboBox_4 = new JComboBox(Kebersihan);
+		comboBox_4.setBounds(155, 107, 147, 20);
+		panel_3.add(comboBox_4);
+
+		JComboBox comboBox_5 = new JComboBox(Kebersihan);
+		comboBox_5.setBounds(155, 132, 147, 20);
+		panel_3.add(comboBox_5);
+
+		JComboBox comboBox_14 = new JComboBox(Kebersihan);
+		comboBox_14.setBounds(155, 157, 147, 20);
+		panel_3.add(comboBox_14);
 
 		JPanel panel_4 = new JPanel();
 		tabbedPane.addTab("Kebersihan", null, panel_4, null);
@@ -472,11 +388,6 @@ public class inputForm extends JFrame {
 		lblNewLabel_14.setBounds(10, 86, 86, 14);
 		panel_4.add(lblNewLabel_14);
 
-		textField_8 = new JTextField();
-		textField_8.setBounds(204, 8, 200, 20);
-		panel_4.add(textField_8);
-		textField_8.setColumns(10);
-
 		JSlider slider = new JSlider();
 		slider.setBounds(204, 61, 200, 23);
 		panel_4.add(slider);
@@ -488,6 +399,11 @@ public class inputForm extends JFrame {
 		JSlider slider_2 = new JSlider();
 		slider_2.setBounds(204, 36, 200, 23);
 		panel_4.add(slider_2);
+
+		String Combo1[] = { "Baik", "Buruk" };
+		JComboBox comboBox_1 = new JComboBox(Combo1);
+		comboBox_1.setBounds(204, 8, 200, 20);
+		panel_4.add(comboBox_1);
 
 		JPanel panel_5 = new JPanel();
 		tabbedPane.addTab("Kenyamanan", null, panel_5, null);
@@ -609,7 +525,7 @@ public class inputForm extends JFrame {
 				String Kekokohan = comboBox_11.getSelectedItem().toString();
 				String Kunci = comboBox_12.getSelectedItem().toString();
 				String Bahaya = comboBox_13.getSelectedItem().toString();
-				String SirkulasiUdara = textField_8.getText();
+				String SirkulasiUdara = comboBox_1.getSelectedItem().toString();
 				int Pencahayaan = slider.getValue();
 				int Kelembapan = slider_1.getValue();
 				int Suhu = slider_2.getValue();
@@ -618,40 +534,47 @@ public class inputForm extends JFrame {
 				int JumlahKursi = slider_5.getValue();
 				int JumlahPintu = slider_6.getValue();
 				int JumlahJendela = slider_7.getValue();
-				String KondisiLantai;
-				String KondisiDinding;
-				String KondisiAtap;
-				String KondisiPintu;
-				String KondisiJendela;
-				int JumlahStopKontak = Integer.parseInt(textField_3.getText());
-				String KondisiStopKontak;
-				String PosisiStopKontak;
-				int JumlahKabelLCD = Integer.parseInt(textField_4.getText());
-				String KondisiKabelLCD;
-				String PosisiKabelLCD;
-				int JumlahLampu = Integer.parseInt(textField_5.getText());
-				String KondisiLampu;
-				String PosisiLampu;
-				int JumlahKipasAngin = Integer.parseInt(textField_6.getText());
-				String KondisiKipas;
-				String PosisiKipasAngin;
-				int JumlahAC = Integer.parseInt(textField_7.getText());
-				String KondisiAC;
-				String PosisiAC;
-				String SSID;
-				int Bandwith = Integer.parseInt(textField_12.getText());
-				int JumlahCCTV = Integer.parseInt(textField_10.getText());
-				String KondisiCCTV;
-				String PosisiCCTV;
+				String KondisiLantai = comboBox_2.getSelectedItem().toString();
+				String KondisiDinding = comboBox_3.getSelectedItem().toString();
+				String KondisiAtap = comboBox_4.getSelectedItem().toString();
+				String KondisiPintu = comboBox_5.getSelectedItem().toString();
+				String KondisiJendela = comboBox_14.getSelectedItem()
+						.toString();
+				int JumlahStopKontak = slider_8.getValue();
+				String KondisiStopKontak = comboBox_15.getSelectedItem()
+						.toString();
+				String PosisiStopKontak = comboBox_21.getSelectedItem()
+						.toString();
+				int JumlahKabelLCD = slider_9.getValue();
+				String KondisiKabelLCD = comboBox_16.getSelectedItem()
+						.toString();
+				String PosisiKabelLCD = comboBox_21.getSelectedItem()
+						.toString();
+				int JumlahLampu = slider_10.getValue();
+				String KondisiLampu = comboBox_17.getSelectedItem().toString();
+				String PosisiLampu = comboBox_22.getSelectedItem().toString();
+				String KondisiKipas = comboBox_18.getSelectedItem().toString();
+				String PosisiKipasAngin = comboBox_23.getSelectedItem()
+						.toString();
+				String KondisiAC = comboBox_19.getSelectedItem().toString();
+				String PosisiAC = comboBox_24.getSelectedItem().toString();
+				String SSID = comboBox_28.getSelectedItem().toString();
+				int JumlahKipasAngin = slider_11.getValue();
+				int JumlahAC = slider_12.getValue();
+				int JumlahCCTV = slider_13.getValue();
+				int Bandwith = Integer.parseInt(comboBox_27.getSelectedItem()
+						.toString());
+				String KondisiCCTV = comboBox_20.getSelectedItem().toString();
+				String PosisiCCTV = comboBox_25.getSelectedItem().toString();
 
 				/** Brance **/
 
-				if (Text.equals("") || Text1.equals("") || Text2.equals("") || SirkulasiUdara.equals("")) {
+				if (Text.equals("") || Text1.equals("") || Text2.equals("")
+						|| SirkulasiUdara.equals("")) {
 					JOptionPane.showMessageDialog(null,
 							"Semua bagian harus di isi !");
 				}
-				
-				
+
 				else {
 					int selectOption = JOptionPane.showConfirmDialog(null,
 							"Apakah anda yakin save data ini !", "Message",
@@ -665,15 +588,23 @@ public class inputForm extends JFrame {
 							input.input(Text, GKB, Text1, Text2);
 							input.input(panjang, lebar, JumlahKursi,
 									JumlahPintu, JumlahJendela);
+							input.input(JumlahStopKontak, KondisiStopKontak,
+									PosisiStopKontak, JumlahKabelLCD,
+									KondisiKabelLCD, PosisiKabelLCD,
+									JumlahLampu, KondisiLampu, PosisiLampu,
+									JumlahKipasAngin, KondisiKipas,
+									PosisiKipasAngin, JumlahAC, KondisiAC,
+									PosisiAC, SSID, Bandwith, JumlahCCTV,
+									KondisiCCTV, PosisiCCTV);
+							input.inputKenyamanan(KondisiLantai,
+									KondisiDinding, KondisiAtap, KondisiPintu,
+									KondisiJendela);
 							input.input(SirkulasiUdara, Pencahayaan,
 									Kelembapan, Suhu);
 							input.input(Kebisingan, Bau, Kebocoran, Kerusakan,
 									Keausan);
-
 							input.input(Kekokohan, Kunci, Bahaya);
 
-							JOptionPane.showMessageDialog(null,
-									"All Data Saved"+JumlahStopKontak);
 						} catch (Exception e) {
 							JOptionPane.showMessageDialog(null,
 									"Warning! Ceck you're input");
