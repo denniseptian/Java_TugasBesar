@@ -362,7 +362,7 @@ public class Analisis {
 			PengondisianKeausan = "Tidak Sesuai";
 		}
 
-		dataBase.SaveKenyamanan(PengondisianKebisingan, Bau,
+		dataBase.SaveKenyamanan(PengondisianKebisingan, PengondisianBau,
 				PengondisianKebocoran, PengondisianKerusakan,
 				PengondisianKeausan);
 
