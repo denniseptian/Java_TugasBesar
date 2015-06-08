@@ -38,19 +38,38 @@ public class Input extends Master {
 				RuangKelasObject.getLokasiRuang(),
 				RuangKelasObject.getProgramStudi(),
 				RuangKelasObject.getFakultas());
-		dataBase.Save(NamaRuang, LokasiRuang, Jurusan, Fakultas);
+
+		dataBase.Save(RuangKelasObject.getNamaRuang(),
+				RuangKelasObject.getLokasiRuang(),
+				RuangKelasObject.getProgramStudi(),
+				RuangKelasObject.getFakultas());
 
 	}
 
 	public void input(int panjang, int lebar, int JumlahKursi, int JumlahPintu,
 			int JumlahJendela) {
 
+		RuangKelasObject.setPanjangRuang(panjang);
+		RuangKelasObject.setLebarRuang(lebar);
+		RuangKelasObject.setJumlahKursi(JumlahKursi);
+		RuangKelasObject.setJumlahPintu(JumlahPintu);
+		RuangKelasObject.setJumlahJendela(JumlahJendela);
+
 		Ruang = new RuangKelas(RuangKelasObject.getPanjangRuang(),
 				RuangKelasObject.getLebarRuang(),
 				RuangKelasObject.getJumlahKursi(),
 				RuangKelasObject.getJumlahPintu(),
 				RuangKelasObject.getJumlahJendela());
-		dataBase.Save(panjang, lebar, JumlahKursi, JumlahPintu, JumlahJendela);
+		dataBase.Save(RuangKelasObject.getPanjangRuang(),
+				RuangKelasObject.getLebarRuang(),
+				RuangKelasObject.getJumlahKursi(),
+				RuangKelasObject.getJumlahPintu(),
+				RuangKelasObject.getJumlahJendela());
+		analisis.KondisiRuang(RuangKelasObject.getPanjangRuang(),
+				RuangKelasObject.getLebarRuang(),
+				RuangKelasObject.getJumlahKursi(),
+				RuangKelasObject.getJumlahPintu(),
+				RuangKelasObject.getJumlahJendela());
 
 	}
 
@@ -103,11 +122,45 @@ public class Input extends Master {
 				RuangKelasObject.getKondisiCCTV(),
 				RuangKelasObject.getPosisiCCTV());
 
-		dataBase.Save(JumlahStopKontak, KondisiStopKontak, PosisiStopKontak,
-				JumlahKabelLCD, KondisiKabelLCD, PosisiKabelLCD, JumlahLampu,
-				KondisiLampu, PosisiLampu, JumlahKipasAngin, KondisiKipas,
-				PosisiKipasAngin, JumlahAC, KondisiAC, PosisiAC, SSID,
-				Bandwith, JumlahCCTV, KondisiCCTV, PosisiCCTV);
+		dataBase.Save(RuangKelasObject.getJumlahStopKontak(),
+				RuangKelasObject.getKondisiStopKontak(),
+				RuangKelasObject.getPosisiStopKontak(),
+				RuangKelasObject.getJumlahKabelLCD(),
+				RuangKelasObject.getKondisiKabelLCD(),
+				RuangKelasObject.getPosisiKabelLCD(),
+				RuangKelasObject.getJumlahLampu(),
+				RuangKelasObject.getKondisiLampu(),
+				RuangKelasObject.getPosisiLampu(),
+				RuangKelasObject.getJumlahKipasAngin(),
+				RuangKelasObject.getKondisiKipasAngin(),
+				RuangKelasObject.getPosisiKipasAngin(),
+				RuangKelasObject.getJumlahAC(),
+				RuangKelasObject.getKondisiAC(),
+				RuangKelasObject.getPosisiAC(), RuangKelasObject.getSSID(),
+				RuangKelasObject.getBandwidth(),
+				RuangKelasObject.getJumlahCCTV(),
+				RuangKelasObject.getKondisiCCTV(),
+				RuangKelasObject.getPosisiCCTV());
+
+		analisis.Sarana(RuangKelasObject.getJumlahStopKontak(),
+				RuangKelasObject.getKondisiStopKontak(),
+				RuangKelasObject.getPosisiStopKontak(),
+				RuangKelasObject.getJumlahKabelLCD(),
+				RuangKelasObject.getKondisiKabelLCD(),
+				RuangKelasObject.getPosisiKabelLCD(),
+				RuangKelasObject.getJumlahLampu(),
+				RuangKelasObject.getKondisiLampu(),
+				RuangKelasObject.getPosisiLampu(),
+				RuangKelasObject.getJumlahKipasAngin(),
+				RuangKelasObject.getKondisiKipasAngin(),
+				RuangKelasObject.getPosisiKipasAngin(),
+				RuangKelasObject.getJumlahAC(),
+				RuangKelasObject.getKondisiAC(),
+				RuangKelasObject.getPosisiAC(), RuangKelasObject.getSSID(),
+				RuangKelasObject.getBandwidth(),
+				RuangKelasObject.getJumlahCCTV(),
+				RuangKelasObject.getKondisiCCTV(),
+				RuangKelasObject.getPosisiCCTV());
 	}
 
 	public void inputKenyamanan(String KondisiLantai, String KondisiDinding,
@@ -125,8 +178,16 @@ public class Input extends Master {
 				RuangKelasObject.getKondisiPintu(),
 				RuangKelasObject.getKondisiJendela());
 
-		dataBase.Save(KondisiLantai, KondisiDinding, KondisiAtap, KondisiPintu,
-				KondisiJendela);
+		dataBase.Save(RuangKelasObject.getKondisiLantai(),
+				RuangKelasObject.getKondisiDinding(),
+				RuangKelasObject.getKondisiAtap(),
+				RuangKelasObject.getKondisiPintu(),
+				RuangKelasObject.getKondisiJendela());
+		analisis.LingkunganKelas(RuangKelasObject.getKondisiLantai(),
+				RuangKelasObject.getKondisiDinding(),
+				RuangKelasObject.getKondisiAtap(),
+				RuangKelasObject.getKondisiPintu(),
+				RuangKelasObject.getKondisiJendela());
 	}
 
 	public void input(String SirkulasiUdara, int Pencahayaan, int Kelembapan,
@@ -140,7 +201,15 @@ public class Input extends Master {
 		Ruang = new RuangKelas(RuangKelasObject.getSirkulasiUdara(),
 				RuangKelasObject.getNilaiPencahayaan(),
 				RuangKelasObject.getKelembaban(), RuangKelasObject.getSuhu());
-		dataBase.Save(SirkulasiUdara, Pencahayaan, Kelembapan, Suhu);
+
+		dataBase.Save(RuangKelasObject.getSirkulasiUdara(),
+				RuangKelasObject.getNilaiPencahayaan(),
+				RuangKelasObject.getKelembaban(), RuangKelasObject.getSuhu());
+
+		analisis.KebersihanRuangKelas(RuangKelasObject.getSirkulasiUdara(),
+				RuangKelasObject.getNilaiPencahayaan(),
+				RuangKelasObject.getKelembaban(), RuangKelasObject.getSuhu());
+
 	}
 
 	public void input(String Kebisingan, String Bau, String Kebocoran,
@@ -156,7 +225,15 @@ public class Input extends Master {
 				RuangKelasObject.getBau(), RuangKelasObject.getKebocoran(),
 				RuangKelasObject.getKerusakan(), RuangKelasObject.getKeausan());
 
-		dataBase.SaveKenyamanan(Kebisingan, Bau, Kebocoran, Kerusakan, Keausan);
+		dataBase.SaveKenyamanan(RuangKelasObject.getKebisingan(),
+				RuangKelasObject.getKebisingan(),
+				RuangKelasObject.getKebocoran(),
+				RuangKelasObject.getKerusakan(), RuangKelasObject.getKeausan());
+
+		analisis.kenyamanan(RuangKelasObject.getKebisingan(),
+				RuangKelasObject.getKebisingan(),
+				RuangKelasObject.getKebocoran(),
+				RuangKelasObject.getKerusakan(), RuangKelasObject.getKeausan());
 	}
 
 	public void input(String Kekokohan, String Kunci, String Bahaya) {
@@ -169,7 +246,13 @@ public class Input extends Master {
 				RuangKelasObject.getKunciPintuJendela(),
 				RuangKelasObject.getBahaya());
 
-		dataBase.Save(Kekokohan, Kunci, Bahaya);
+		dataBase.Save(RuangKelasObject.getKekokohan(),
+				RuangKelasObject.getKunciPintuJendela(),
+				RuangKelasObject.getBahaya());
+
+		analisis.keamanan(RuangKelasObject.getKekokohan(),
+				RuangKelasObject.getKunciPintuJendela(),
+				RuangKelasObject.getBahaya());
 	}
 
 	/** End of new side **/

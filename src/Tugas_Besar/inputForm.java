@@ -502,7 +502,13 @@ public class inputForm extends JFrame {
 		JButton btnExit = new JButton("Exit");
 		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.exit(0);
+				int selectOption = JOptionPane.showConfirmDialog(null,
+						"Apakah anda yakin save data ini !", "Message",
+						JOptionPane.YES_NO_OPTION);
+				if(selectOption == JOptionPane.YES_OPTION){
+					dispose();
+				}
+				
 			}
 		});
 		btnExit.setBounds(637, 396, 89, 23);
@@ -604,6 +610,10 @@ public class inputForm extends JFrame {
 							input.input(Kebisingan, Bau, Kebocoran, Kerusakan,
 									Keausan);
 							input.input(Kekokohan, Kunci, Bahaya);
+							
+							JOptionPane.showMessageDialog(null, "All Data Saved to Database ");
+							
+							dispose();
 
 						} catch (Exception e) {
 							JOptionPane.showMessageDialog(null,

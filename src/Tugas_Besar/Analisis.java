@@ -1,9 +1,12 @@
 package Tugas_Besar;
 
+import com.sun.xml.internal.messaging.saaj.packaging.mime.util.BEncoderStream;
+
 public class Analisis {
-	//Input InputObject = new Input();
+	// Input InputObject = new Input();
 	Output OutputObject = new Output();
 	RuangKelas ruangKelasObject = new RuangKelas();
+	DataBase dataBase = new DataBase();
 	RuangKelas RuangKelasOfObject;
 
 	public Analisis() {
@@ -15,14 +18,14 @@ public class Analisis {
 	}
 
 	int Kesesuaian = 0;
-	private double Luas;
+	private int Luas;
 	private double Rasio;
 
 	public double getLuas() {
 		return Luas;
 	}
 
-	public void setLuas(double luas) {
+	public void setLuas(int luas) {
 		Luas = luas;
 	}
 
@@ -33,206 +36,365 @@ public class Analisis {
 	public void setRasio(double rasio) {
 		Rasio = rasio;
 	}
-	
-	
 
-	
-	public double KondisiRuang() {
-		
-		//ruangKelasObject = InputObject.getRuangKelas();
+	public double KondisiRuang(int PanjangRuang, int LebarRuang,
+			int JumlahKursi, int JumlahPintu, int JumlahJendela) {
 
-		Luas = ruangKelasObject.getPanjangRuang()
-				* ruangKelasObject.getLebarRuang();
-		if (ruangKelasObject.getPanjangRuang() != ruangKelasObject
-				.getLebarRuang()) {
-			System.out.println("Bentuk Ruangan Persegi panjang");
+		String BentukRuang;
+		String KondisiRasio;
+		String KondisiJendela;
+		String KondisiPintu;
+
+		Luas = PanjangRuang * LebarRuang;
+		if (PanjangRuang != LebarRuang) {
+			BentukRuang = "PersegiPanjang";
 
 		} else {
-			System.out.println("Bentuk Ruangan Tidak Persegi panjang");
-			System.out.println("Ruangan Sesuai");
+			BentukRuang = "Kubus";
 		}
-		Rasio = Luas / ruangKelasObject.getJumlahKursi();
+		Rasio = Luas / JumlahKursi;
 		if (Rasio >= 0.5) {
-			System.out.println("Rasio Ruangan Sesuai");
+			KondisiRasio = "Sesuai";
 			Kesesuaian++;
 		} else {
-			System.out.println("Rasio Ruangan Tidak Sesuai");
+			KondisiRasio = "Tidak Sesuai ";
 		}
-		if (ruangKelasObject.getJumlahJendela() >= 1) {
-			System.out.println("Jumlah Cendela Sesuai");
+		if (JumlahJendela >= 1) {
+			KondisiJendela = "Sesuai";
 			Kesesuaian++;
 		} else {
-			System.out.println("Jumlah Jendela tidak sesuai");
+			KondisiJendela = "Tidak Sesuai";
 		}
-		if (ruangKelasObject.getJumlahPintu() >= 2) {
-			System.out.println("Jumlah Pintu sesuai");
+		if (JumlahPintu >= 2) {
+			KondisiPintu = "Sesuai";
 			Kesesuaian++;
 		} else {
-			System.out.println("Jumlah Pintu tidak sesuai");
+			KondisiPintu = "Tidak Sesuai";
 		}
-		OutputObject.get(ruangKelasObject.getPanjangRuang(),
-				ruangKelasObject.getLebarRuang(),
-				ruangKelasObject.getJumlahKursi(),
-				ruangKelasObject.getJumlahPintu(),
-				ruangKelasObject.getJumlahJendela());
+
+		dataBase.save(Luas);
+		dataBase.save(BentukRuang, KondisiRasio, KondisiPintu, KondisiJendela);
 
 		return Kesesuaian;
 
 	}
 
-	double Sarana() {
-		
-		//ruangKelasObject = InputObject.getRuangKelas();
+	double Sarana(int JumlahStopKontak, String KondisiStopKontak,
+			String PosisiStopKontak, int JumlahKabelLcd,
+			String KondisiKabelLcd, String PosisiKabelLcd, int JumlahLampu,
+			String KondisiLampu, String PosisiLampu, int JumlahKipasAngin,
+			String KondisiKipasAngin, String PosisiKipasAngin, int JumlahAc,
+			String KondisiAc, String PosisiAc, String SSID, int Bandwith,
+			int JumlahCCTV, String KondidiCCTV, String PosisiCCTV) {
 
-		if (ruangKelasObject.getJumlahStopKontak() >= 4) {
-			System.out.println("Jumlah Stop Kontak Sesuai");
+		String PengkondisianJumlahStopKontak;
+		String PengkondisianKondisiStopKontak;
+		String PengkondisianPosisiStopKontak;
+		String PengkondisianJumlahKabelLcd;
+		String PengkondisianKondisiKabelLcd;
+		String PengkondisianPosisiKabelLcd;
+		String PengkondisianJumlahLampu;
+		String PengkondisianKondisiLampu;
+		String PengkondisianPosisiLampu;
+		String PengkondisianJumlahKipasAngin;
+		String PengkondisianKondisiKipasAngin;
+		String PengkondisianPosisiKipasAngin;
+		String PengkondisianJumlahAc;
+		String PengkondisianKondisiAc;
+		String PengkondisianPosisiAc;
+		String PengkondisianSSID;
+		String PengkondisianBandwith;
+		String PengkondisianJumlahCCTV;
+		String PengkondisianKondidiCCTV;
+		String PengkondisianPosisiCCTV;
+
+		if (JumlahStopKontak >= 4) {
+			PengkondisianJumlahStopKontak = "Sesuai";
 			Kesesuaian++;
 		} else {
-			System.out.println("Tidak Sesusai");
+			PengkondisianJumlahStopKontak = "Tidak Sesuai";
 		}
-		if (ruangKelasObject.getKondisiStopKontak().equalsIgnoreCase("baik")) {
-			System.out.println("Kondisi Stop Kontak Sesuai");
+		if (KondisiStopKontak.equalsIgnoreCase("Baik")) {
+			PengkondisianKondisiStopKontak = "Sesuai";
 			Kesesuaian++;
 		} else {
-			System.out.println("Tidak Sesuai");
+			PengkondisianKondisiStopKontak = "Tidak Sesuai";
 		}
-		if (ruangKelasObject.getPosisiStopKontak().equalsIgnoreCase(
-				"DekatDosen")
-				|| ruangKelasObject.getPosisiStopKontak().equalsIgnoreCase(
-						"PojokKelas")) {
-			System.out.println("Posisi Sesuai");
+		if (PosisiStopKontak.equalsIgnoreCase("Pojok Dekat Dosen")) {
+			PengkondisianPosisiStopKontak = "Sesuai";
 			Kesesuaian++;
 		} else {
-			System.out.println("Posisi Tidak Sesuai");
+			PengkondisianPosisiStopKontak = "Tidak Sesuai";
 		}
-		if (ruangKelasObject.getJumlahKabelLCD() >= 1) {
-			System.out.println("Jumlah Kabel LCD Sesuai");
+		if (JumlahKabelLcd >= 1) {
+			PengkondisianJumlahKabelLcd = "Sesuai";
 			Kesesuaian++;
 
 		} else {
-			System.out.println("Jumlah Kabel LCD Tidak Sesuai");
+			PengkondisianJumlahKabelLcd = "Tidak Sesuai";
 		}
-		if (ruangKelasObject.getKondisiKabelLCD().equalsIgnoreCase("baik")
-				|| ruangKelasObject.getKondisiKabelLCD().equalsIgnoreCase(
-						"berfungsi")) {
-			System.out.println("KondisiKabelLCD : s");
+		if (KondisiKabelLcd.equalsIgnoreCase("baik")) {
+			PengkondisianKondisiKabelLcd = "Sesuai";
 			Kesesuaian++;
 		} else {
-			System.out.println("Tidak s");
+			PengkondisianKondisiKabelLcd = "Tidak Sesuai";
 		}
-		if (ruangKelasObject.getPosisiKabelLCD().equalsIgnoreCase("dekatdosen")) {
-			System.out.println("PosisiKabelLCD : s");
+		if (PosisiKabelLcd.equalsIgnoreCase("pojok dekat dosen")) {
+			PengkondisianPosisiKabelLcd = "Sesuai";
 			Kesesuaian++;
 		} else {
-			System.out.println("Posisi kabel LCD Tidak sesuai");
+			PengkondisianPosisiKabelLcd = "Tidak Sesuai";
 		}
-		if (ruangKelasObject.getJumlahLampu() >= 18) {
-			System.out.println("Jumlah Lampu Sesuai");
+		if (JumlahLampu >= 18) {
+			PengkondisianJumlahLampu = "Sesuai";
 			Kesesuaian++;
 		} else {
-			System.out.println("Jumlah Lampu tidak Sesuai");
+			PengkondisianJumlahLampu = "Tidak Sesuai";
 		}
-		if (ruangKelasObject.getKondisiLampu().equalsIgnoreCase("baik")) {
-			System.out.println("Kondisi lampu sesuai");
+		if (KondisiLampu.equalsIgnoreCase("baik")) {
+			PengkondisianKondisiLampu = "Sesuai";
 			Kesesuaian++;
 		} else {
-			System.out.println("kondisi Lampu tidak sesuai");
+			PengkondisianKondisiLampu = "Sesuai";
 		}
-		if (ruangKelasObject.getPosisiLampu().equalsIgnoreCase("atap")) {
-			System.out.println("Posisi Lampu Sesuai");
+		if (PosisiLampu.equalsIgnoreCase("atap")) {
+			PengkondisianPosisiLampu = "Sesuai";
 			Kesesuaian++;
 		} else {
-			System.out.println("Posisi Lampu tidak sesuai");
+			PengkondisianPosisiLampu = "Tidak Sesuai";
 		}
-		if (ruangKelasObject.getJumlahKipasAngin() >= 2) {
-			System.out.println("Jumlah Kipas angin sesuai");
+		if (JumlahKipasAngin >= 2) {
+			PengkondisianJumlahKipasAngin = "Sesuai";
 			Kesesuaian++;
 		} else {
-			System.out.println("Jumlah kipas angin tidak sesuai");
+			PengkondisianJumlahKipasAngin = "Tidak Sesuai";
 		}
-		if (ruangKelasObject.getPosisiKipasAngin().equalsIgnoreCase("atap")) {
-			System.out.println("Posisi kipas angin sesuai");
+		if (PosisiKipasAngin.equalsIgnoreCase("dinding atas")) {
+			PengkondisianPosisiKipasAngin = "Sesuai";
 			Kesesuaian++;
 		} else {
-			System.out.println("posisi Kipas Angin tidak sesuai");
+			PengkondisianPosisiKipasAngin = "Tidak Sesuai";
 		}
-		if (ruangKelasObject.getKondisiKipasAngin().equalsIgnoreCase("baik")) {
-			System.out.println("Kondisi Kipas angin sesuai");
+		if (KondisiKipasAngin.equalsIgnoreCase("baik")) {
+			PengkondisianKondisiKipasAngin = "Sesuai";
 			Kesesuaian++;
 		} else {
-			System.out.println("Kondisi kipas angin tidak sesuai");
+			PengkondisianKondisiKipasAngin = "Tidak Sesuai";
 		}
-		if (ruangKelasObject.getJumlahAC() >= 1) {
-			System.out.println("Jumlah AC Sesuai");
+		if (JumlahAc >= 1) {
+			PengkondisianJumlahAc = "Sesuai";
 			Kesesuaian++;
 		} else {
-			System.out.println("Jumlah AC Tidak Sesuai");
+			PengkondisianJumlahAc = "Tidak Sesuai";
 		}
-		if (ruangKelasObject.getKondisiAC().equalsIgnoreCase("baik")) {
-			System.out.println("KondisiAC : s");
+		if (KondisiAc.equalsIgnoreCase("baik")) {
+			PengkondisianKondisiAc = "Sesuai";
 			Kesesuaian++;
 		} else {
-			System.out.println("Tidak s");
+			PengkondisianKondisiAc = "Tidak Sesuai";
 			Kesesuaian++;
 		}
-		if (ruangKelasObject.getPosisiAC().equalsIgnoreCase("belakang")
-				|| ruangKelasObject.getPosisiAC().equalsIgnoreCase("samping")) {
-			System.out.println("PosisiAC : s");
-			Kesesuaian++;
-		} else {
-			System.out.println("Tidak s");
-		}
-		if (ruangKelasObject.getSSID().equalsIgnoreCase("ummhotspot")) {
-			System.out.println("getSSID : s");
+		if (PosisiAc.equalsIgnoreCase("Dinding Atas")) {
+			PengkondisianPosisiAc = "sesuai";
 			Kesesuaian++;
 		} else {
-			System.out.println("Tidak s");
+			PengkondisianPosisiAc = "Tidak sesuai";
 		}
-		if (ruangKelasObject.getBandwidth()==512) {
-			System.out.println(512);
+		if (SSID.equalsIgnoreCase("umm hotspot")) {
+			PengkondisianSSID = "Sesuai";
 			Kesesuaian++;
 		} else {
-			System.out.println("Tidak s");
+			PengkondisianSSID = "Tidak Sesuai";
 		}
-		if (ruangKelasObject.getJumlahCCTV() >= 2) {
-			System.out.println("JumlahCCTV : s");
+		if (Bandwith >= 512) {
+			PengkondisianBandwith = "Sesuai";
 			Kesesuaian++;
 		} else {
-			System.out.println("Tidak s");
+			PengkondisianBandwith = "Tidak Sesuai";
 		}
-		if (ruangKelasObject.getKondisiCCTV().equalsIgnoreCase("baik")) {
-			System.out.println("KondisiCCTV : s");
+		if (JumlahCCTV >= 2) {
+			PengkondisianJumlahCCTV = "Sesuai";
 			Kesesuaian++;
 		} else {
-			System.out.println("Tidak s");
+			PengkondisianJumlahCCTV = "Tidak Sesuai";
 		}
-		if (ruangKelasObject.getPosisiCCTV().equalsIgnoreCase("depanbelakang")) {
-			System.out.println("PosisiCCTV : s");
+		if (KondidiCCTV.equalsIgnoreCase("baik")) {
+			PengkondisianKondidiCCTV = "Sesuai";
 			Kesesuaian++;
 		} else {
-			System.out.println("Tidak s");
+			PengkondisianKondidiCCTV = "Tidak Sesuai";
 		}
-		OutputObject.get(ruangKelasObject.getJumlahStopKontak(),
-				ruangKelasObject.getKondisiStopKontak(),
-				ruangKelasObject.getPosisiStopKontak(),
-				ruangKelasObject.getJumlahKabelLCD(),
-				ruangKelasObject.getKondisiKabelLCD(),
-				ruangKelasObject.getPosisiKabelLCD(),
-				ruangKelasObject.getJumlahLampu(),
-				ruangKelasObject.getKondisiLampu(),
-				ruangKelasObject.getPosisiLampu(),
-				ruangKelasObject.getJumlahKipasAngin(),
-				ruangKelasObject.getKondisiKipasAngin(),
-				ruangKelasObject.getPosisiKipasAngin(),
-				ruangKelasObject.getJumlahAC(),
-				ruangKelasObject.getKondisiAC(),
-				ruangKelasObject.getPosisiAC(), ruangKelasObject.getSSID(),
-				ruangKelasObject.getBandwidth(),
-				ruangKelasObject.getJumlahCCTV(),
-				ruangKelasObject.getKondisiCCTV(),
-				ruangKelasObject.getPosisiCCTV());
+		if (PosisiCCTV.equalsIgnoreCase("Dinding Atas")) {
+			PengkondisianPosisiCCTV = "Sesuai";
+			Kesesuaian++;
+		} else {
+			PengkondisianPosisiCCTV = "Sesuai";
+		}
+
+		dataBase.save(PengkondisianJumlahStopKontak,
+				PengkondisianKondisiStopKontak, PengkondisianPosisiStopKontak,
+				PengkondisianJumlahKabelLcd, PengkondisianKondisiKabelLcd,
+				PengkondisianPosisiKabelLcd, PengkondisianJumlahLampu,
+				PengkondisianKondisiLampu, PengkondisianPosisiLampu,
+				PengkondisianJumlahKipasAngin, PengkondisianKondisiKipasAngin,
+				PengkondisianPosisiKipasAngin, PengkondisianJumlahAc,
+				PengkondisianKondisiAc, PengkondisianPosisiAc,
+				PengkondisianSSID, PengkondisianBandwith,
+				PengkondisianJumlahCCTV, PengkondisianKondidiCCTV,
+				PengkondisianPosisiCCTV);
+
 		return Kesesuaian;
 	}
 
-	
+	double LingkunganKelas(String KondisiLantai, String KondisiDinding,
+			String KondisiAtap, String KondisiPintu, String KondisiJendela) {
+
+		String PengkondisianKondisiLantai;
+		String PengkondisianKondisiDinding;
+		String PengkondisianKondisiAtap;
+		String PengkondisianKondisiPintu;
+		String PengkondisianKondisiJendela;
+
+		if (KondisiLantai.equalsIgnoreCase("Bersih")) {
+			PengkondisianKondisiLantai = "Sesuai";
+		} else {
+			PengkondisianKondisiLantai = "Tidak Sesuai";
+		}
+		if (KondisiDinding.equalsIgnoreCase("Besih")) {
+			PengkondisianKondisiDinding = "Sesuai";
+		} else {
+			PengkondisianKondisiDinding = "Tidak Sesuai";
+		}
+		if (KondisiAtap.equalsIgnoreCase("Besih")) {
+			PengkondisianKondisiAtap = "Sesuai";
+		} else {
+			PengkondisianKondisiAtap = "Tidak Sesuai";
+		}
+		if (KondisiPintu.equalsIgnoreCase("Bersih")) {
+			PengkondisianKondisiPintu = "Sesuai";
+		} else {
+			PengkondisianKondisiPintu = "Tidak Sesuai";
+		}
+		if (KondisiJendela.equalsIgnoreCase("Bersih")) {
+			PengkondisianKondisiJendela = "Bersih";
+		} else {
+			PengkondisianKondisiJendela = "Bersih";
+		}
+
+		dataBase.save(PengkondisianKondisiLantai, PengkondisianKondisiDinding,
+				PengkondisianKondisiAtap, PengkondisianKondisiPintu,
+				PengkondisianKondisiJendela);
+
+		return Kesesuaian;
+	}
+
+	double KebersihanRuangKelas(String SirkulasiUdara, int Pencahayaan,
+			int Kelembapan, int Suhu) {
+
+		String PengkondisianSrikulasiUdara;
+		String PengkondisianPencahayaan;
+		String PengkondisianKelembapan;
+		String PengkondisianSuhu;
+
+		if (SirkulasiUdara.equalsIgnoreCase("Baik")) {
+			PengkondisianSrikulasiUdara = "Sesuai";
+		} else {
+			PengkondisianSrikulasiUdara = "Sesuai";
+		}
+		if (Pencahayaan >= 25 && Pencahayaan <= 35) {
+			PengkondisianPencahayaan = "Sesuai";
+		} else {
+			PengkondisianPencahayaan = "Tidak Sesuai";
+		}
+		if (Kelembapan >= 70 && Kelembapan <= 80) {
+			PengkondisianKelembapan = "Sesuai";
+		} else {
+			PengkondisianKelembapan = "Tidak Sesuai";
+		}
+		if (Suhu >= 25 && Suhu <= 35) {
+			PengkondisianSuhu = "Sesuai";
+		} else {
+			PengkondisianSuhu = "Tidak Sesuai";
+		}
+
+		dataBase.saveKebersihan(PengkondisianSrikulasiUdara,
+				PengkondisianPencahayaan, PengkondisianKelembapan,
+				PengkondisianSuhu);
+
+		return Kesesuaian;
+	}
+
+	double kenyamanan(String Kebisingan, String Bau, String Kebocoran,
+			String Kerusakan, String Keausan) {
+
+		String PengondisianKebisingan;
+		String PengondisianBau;
+		String PengondisianKebocoran;
+		String PengondisianKerusakan;
+		String PengondisianKeausan;
+
+		if (Kebisingan.equalsIgnoreCase("tidak bising")) {
+			PengondisianKebisingan = "Sesuai";
+			Kesesuaian++;
+		} else {
+			PengondisianKebisingan = "Tidak Sesuai";
+		}
+		if (Bau.equalsIgnoreCase("tidak bau")) {
+			PengondisianBau = "Sesuai";
+			Kesesuaian++;
+		} else {
+			PengondisianBau = "Tidak Sesuai";
+		}
+		if (Kebocoran.equalsIgnoreCase("tidak bocor")) {
+			PengondisianKebocoran = "Sesuai";
+			Kesesuaian++;
+		} else {
+			PengondisianKebocoran = "Tidak Sesuai";
+		}
+		if (Kerusakan.equalsIgnoreCase("tidak rusak")) {
+			PengondisianKerusakan = "Sesuai";
+		} else {
+			PengondisianKerusakan = "Tidak Sesuai";
+		}
+		if (Keausan.equalsIgnoreCase("tidak aus")) {
+			PengondisianKeausan = "Sesuai";
+		} else {
+			PengondisianKeausan = "Tidak Sesuai";
+		}
+
+		dataBase.SaveKenyamanan(PengondisianKebisingan, Bau,
+				PengondisianKebocoran, PengondisianKerusakan,
+				PengondisianKeausan);
+
+		return Kesesuaian;
+	}
+
+	void keamanan(String Kekokohan, String Kunci, String Bahaya) {
+
+		String PengondisianKekokohan;
+		String PengondisianKunci;
+		String PengondisianBahaya;
+
+		if (Kekokohan.equalsIgnoreCase("kokoh")) {
+			PengondisianKekokohan = "Sesuai";
+			Kesesuaian++;
+		} else {
+			PengondisianKekokohan = "Tidak sesuai";
+		}
+		if (Kunci.equalsIgnoreCase("ada")) {
+			PengondisianKunci = "Sesuai";
+		} else {
+			PengondisianKunci = "tidak sesuai";
+		}
+		if (Bahaya.equalsIgnoreCase("tidak bahaya")) {
+			PengondisianBahaya = "Sesuai";
+		} else {
+			PengondisianBahaya = "Tidak sesuai";
+		}
+
+		dataBase.save(PengondisianKekokohan, PengondisianKunci,
+				PengondisianBahaya);
+
+	}
+
 }

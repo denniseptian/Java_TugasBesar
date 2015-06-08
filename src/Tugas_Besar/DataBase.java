@@ -2,7 +2,7 @@ package Tugas_Besar;
 
 import java.sql.SQLException;
 import java.sql.Statement;
-import javax.swing.JOptionPane;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableColumnModel;
 import javax.swing.table.TableColumn;
@@ -19,8 +19,6 @@ public class DataBase {
 
 	Integer baris;
 	Koneksi connection = new Koneksi();
-	
-	
 
 	// For Name object
 	void Save(String NamaRuang, String LokasiRuang, String Prodi,
@@ -35,13 +33,11 @@ public class DataBase {
 
 				Statement statement = connection.config.getConnection()
 						.createStatement();
-				statement
-						.executeUpdate("insert into identitas"
+				statement.executeUpdate("insert into identitas"
 						+ "(nama, lokasi, prodi, fakultas) values ('"
 						+ NamaRuang + "','" + LokasiRuang + "','" + Prodi
 						+ "','" + Fakultas + "')");
 
-				JOptionPane.showMessageDialog(null, "Save Succesfull");
 			}
 		} catch (SQLException x) {
 			JOptionPane.showMessageDialog(null, "Failed to saving : " + x);
@@ -61,7 +57,7 @@ public class DataBase {
 							+ PanjangRuang + "','" + LebarRuang + "','"
 							+ JumlahKursi + "','" + JumlahKursi + "','"
 							+ JumlahJendela + "')");
-			JOptionPane.showMessageDialog(null, "Save Succesfull");
+			
 		} catch (Exception x) {
 			JOptionPane.showMessageDialog(null, "Failed to saving : " + x);
 		}
@@ -121,7 +117,7 @@ public class DataBase {
 							+ KondisiCCTV
 							+ "','"
 							+ PosisiCCTV + "')");
-			JOptionPane.showMessageDialog(null, "Save Succesfull");
+			
 		} catch (Exception x) {
 			System.out.println("Failed to saving : " + x);
 		}
@@ -139,7 +135,7 @@ public class DataBase {
 							+ KondisiLantai + "','" + KondisiDinding + "','"
 							+ KondisiAtap + "','" + KondisiPintu + "','"
 							+ KondisiJendela + "')");
-			JOptionPane.showMessageDialog(null, "Save Succesfull");
+			
 		} catch (Exception x) {
 			JOptionPane.showMessageDialog(null, "Failed to saving : " + x);
 		}
@@ -156,7 +152,7 @@ public class DataBase {
 							+ "(sirkulasiudara, pencahayaan, kelembapan, suhu) values ('"
 							+ SirkulasiUdara + "','" + Pencahayaan + "','"
 							+ Kelembapan + "','" + Suhu + "') ");
-			JOptionPane.showMessageDialog(null, "Save Succesfull");
+			
 
 		} catch (Exception x) {
 			JOptionPane.showMessageDialog(null, "Failed to saving : " + x);
@@ -175,7 +171,7 @@ public class DataBase {
 							+ Kebisingan + "','" + bau + "','" + Kebocoran
 							+ "','" + Kerusakan + "','" + Keausan + "')");
 
-			JOptionPane.showMessageDialog(null, "Save Succesfull");
+			
 		} catch (Exception x) {
 			JOptionPane.showMessageDialog(null, "Failed to saving : " + x);
 		}
@@ -186,15 +182,188 @@ public class DataBase {
 
 			Statement statement = connection.config.getConnection()
 					.createStatement();
-			statement
-					.executeUpdate("insert into keamanan"
+			statement.executeUpdate("insert into keamanan"
 					+ "(kekokohan, kunci, bahaya) values ('" + kekokohan
 					+ "','" + Kunci + "','" + Bahaya + "')");
 
-			JOptionPane.showMessageDialog(null, "Save Succesfull");
+			
 		} catch (Exception x) {
 			JOptionPane.showMessageDialog(null, "Failed to saving : " + x);
 		}
+	}
+
+	void save(int luas) {
+		try {
+			Statement statement = connection.config.getConnection()
+					.createStatement();
+			statement.executeUpdate("insert into luasruangan"
+					+ "(luas) values ('" + luas + "')");
+		} catch (Exception x) {
+			JOptionPane.showMessageDialog(null, "Failed to saving : " + x);
+		}
+
+	}
+
+	void save(String BentukRuang, String KondisiRasio, String KondisiPintu,
+			String KondisiJendela) {
+		try {
+			Statement statement = connection.config.getConnection()
+					.createStatement();
+			statement
+					.executeUpdate("insert into pengkondisianruang"
+							+ "(bentukruang, kondisijendela, kondisipintu, kondisirasio) values ('"
+							+ BentukRuang + "','" + KondisiJendela + "','"
+							+ KondisiPintu + "','" + KondisiRasio + "')");
+		} catch (Exception x) {
+			JOptionPane.showMessageDialog(null, "Failed to saving : " + x);
+		}
+
+	}
+
+	void save(String PengkondisianJumlahStopKontak,
+			String PengkondisianKondisiStopKontak,
+			String PengkondisianPosisiStopKontak,
+			String PengkondisianJumlahKabelLcd,
+			String PengkondisianKondisiKabelLcd,
+			String PengkondisianPosisiKabelLcd,
+			String PengkondisianJumlahLampu, String PengkondisianKondisiLampu,
+			String PengkondisianPosisiLampu,
+			String PengkondisianJumlahKipasAngin,
+			String PengkondisianKondisiKipasAngin,
+			String PengkondisianPosisiKipasAngin, String PengkondisianJumlahAc,
+			String PengkondisianKondisiAc, String PengkondisianPosisiAc,
+			String PengkondisianSSID, String PengkondisianBandwith,
+			String PengkondisianJumlahCCTV, String PengkondisianKondidiCCTV,
+			String PengkondisianPosisiCCTV) {
+
+		try {
+			Statement statement = connection.config.getConnection()
+					.createStatement();
+			statement
+					.executeUpdate("insert into pengkondisiansarana"
+							+ "(pengkondisianjumlahstopkontak, pengkondisiankondisistopkontak, pengkondisianposisistopkontak, pengkondisianjumlahkabellcd, pengkondisiankondisikabellcd, pengkondisianposisikabellcd, pengkondisianjumlahlampu, pengkondisiankondisilampu, pengkondisianposisilampu, pengkondisianjumlahkipasangin, pengkondsiankondsikipasangin, pengkondisianposisikipasangin, pengkondisianjumlahac, pengkondisiakondisiac, pengkondisianposisiac, pengkondisianssid, pengkondisianbandwith, pengkondisianjumlahcctv, pengkondisiankondisicctv, pengkondisianposisicctv) values ('"
+							+ PengkondisianJumlahStopKontak
+							+ "','"
+							+ PengkondisianKondisiStopKontak
+							+ "','"
+							+ PengkondisianPosisiStopKontak
+							+ "','"
+							+ PengkondisianJumlahKabelLcd
+							+ "','"
+							+ PengkondisianKondisiKabelLcd
+							+ "','"
+							+ PengkondisianPosisiKabelLcd
+							+ "','"
+							+ PengkondisianJumlahLampu
+							+ "','"
+							+ PengkondisianKondisiLampu
+							+ "','"
+							+ PengkondisianPosisiLampu
+							+ "','"
+							+ PengkondisianJumlahKipasAngin
+							+ "','"
+							+ PengkondisianKondisiKipasAngin
+							+ "','"
+							+ PengkondisianPosisiKipasAngin
+							+ "','"
+							+ PengkondisianJumlahAc
+							+ "','"
+							+ PengkondisianKondisiAc
+							+ "','"
+							+ PengkondisianPosisiAc
+							+ "','"
+							+ PengkondisianSSID
+							+ "','"
+							+ PengkondisianBandwith
+							+ "','"
+							+ PengkondisianJumlahCCTV
+							+ "','"
+							+ PengkondisianKondidiCCTV
+							+ "','"
+							+ PengkondisianPosisiCCTV + "')");
+		} catch (Exception x) {
+			JOptionPane.showMessageDialog(null, "Failed to saving : " + x);
+		}
+
+	}
+
+	void save(String PengkondisianKondisiLantai,
+			String PengkondisianKondisiDinding,
+			String PengkondisianKondisiAtap, String PengkondisianKondisiPintu,
+			String PengkondisianKondisiJendela) {
+
+		try {
+			Statement statement = connection.config.getConnection()
+					.createStatement();
+			statement
+					.executeUpdate("insert into pengkondisianlingkungankelas"
+							+ "(pengkondisiankondisilantai, pengkondisiankondisidinding, pengkondisiankondisiatap, pengkondisiankondisipintu, pengkondisiankondisijendela) values ('"
+							+ PengkondisianKondisiLantai + "','"
+							+ PengkondisianKondisiDinding + "','"
+							+ PengkondisianKondisiAtap + "','"
+							+ PengkondisianKondisiPintu + "','"
+							+ PengkondisianKondisiJendela + "')");
+
+		} catch (Exception x) {
+			// TODO: handle exception
+			JOptionPane.showMessageDialog(null, "Failed to saving : " + x);
+		}
+
+	}
+
+	void saveKebersihan(String PengkondisianSrikulasiUdara,
+			String PengkondisianPencahayaan, String PengkondisianKelembapan,
+			String PengkondisianSuhu) {
+
+		try {
+			Statement statement = connection.config.getConnection()
+					.createStatement();
+			statement
+					.executeUpdate("insert into pengkondisiankebersihan"
+							+ "(pengkondisiansirkulasiudara, pengkondisianpencahayaan, pengkondisiankelembapan, pengkondisiansuhu) values ('"
+							+ PengkondisianSrikulasiUdara + "','"
+							+ PengkondisianPencahayaan + "','"
+							+ PengkondisianKelembapan + "','"
+							+ PengkondisianSuhu + "')");
+		} catch (Exception x) {
+			JOptionPane.showMessageDialog(null, "Failed to saving : " + x);
+		}
+
+	}
+
+	void saveKenyamanan(String PengondisianKebisingan, String PengondisianBau,
+			String PengondisianKebocoran, String PengondisianKerusakan,
+			String PengondisianKeausan) {
+
+		try {
+			Statement statement = connection.config.getConnection()
+					.createStatement();
+			statement
+					.executeUpdate("insert into pengondisiankenyamanan"
+							+ "(pengondisiankebisingan, pengondisianbau, pengondisiankebocoran, pengondisiankerusakan, pengondisiankeausan) values ('"
+							+ PengondisianKebisingan + "','" + PengondisianBau
+							+ "','" + PengondisianKebocoran + "','"
+							+ PengondisianKerusakan + "','"
+							+ PengondisianKeausan + "')");
+		} catch (Exception x) {
+			JOptionPane.showMessageDialog(null, "Failed to saving : " + x);
+		}
+
+	}
+
+	void save(String Kekokohan, String Kunci, String Bahaya) {
+
+		try {
+			Statement statement = connection.config.getConnection()
+					.createStatement();
+			statement
+					.executeUpdate("insert into pengondisiankeaman"
+							+ "(pengondisiankekokohan, pengondisiankunci, pengondisianbahaya) values ('"
+							+ Kekokohan + "','" + Kunci + "','" + Bahaya + "')");
+		} catch (Exception x) {
+			JOptionPane.showMessageDialog(null, "Failed to saving : " + x);
+		}
+
 	}
 
 	void Delete(String Tabel, String Arrow, String id) {

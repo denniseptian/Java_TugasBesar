@@ -79,6 +79,7 @@ public class Login extends JFrame {
 				
 				if (Jlabel1.equalsIgnoreCase(ID)&&Jpass.equals(Pass)){
 					HalamanUtama.main(null);
+					dispose();
 				}else{
 					JOptionPane.showMessageDialog(null, "Pasword Salah");
 				}

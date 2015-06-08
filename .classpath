@@ -2,6 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="D:/Java/TugasBesar/JavaBDR.jar"/>
+	<classpathentry kind="lib" path="D:/Java/mysql-connector-java-5.1.24-bin.jar"/>
+	<classpathentry kind="lib" path="D:/Java/DBL.jar"/>
+	<classpathentry kind="lib" path="D:/Java/rs2xml.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
